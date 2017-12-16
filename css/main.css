@@ -25,10 +25,10 @@ h1 {
 }
 p {
     font-size: 1em;
-    line-height: 1em;
+    line-height: 1.3em;
     color: #333;
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -38,6 +38,7 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1em;
+    line-height: 1.3em;
 }
 
 ul.posts li {
