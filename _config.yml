@@ -1,2 +1,4 @@
 name: testing123
 markdown: kramdown
+
+permalink: /blog/:year/:month/:day/:title
