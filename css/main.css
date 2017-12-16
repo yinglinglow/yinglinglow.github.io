@@ -27,8 +27,8 @@ p {
     font-size: 1em;
     line-height: 1em;
     color: #333;
-    -webkit-margin-before: 2em;
-    -webkit-margin-after: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 footer {
     border-top: 1px solid #d5d5d5;
