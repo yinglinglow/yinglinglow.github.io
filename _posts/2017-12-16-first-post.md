@@ -4,6 +4,7 @@ title: "Handy guide to setup Jekyll on Github.io"
 date: 2017-12-16
 ---
 
+
 First post! Waddup yall~
 
 Blog's up and working thanks to a foolproof method of setting up: http://jmcglone.com/guides/github-pages/
