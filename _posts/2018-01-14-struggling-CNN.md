@@ -29,6 +29,8 @@ https://github.com/uclaacmai/Generative-Adversarial-Network-Tutorial/blob/master
 
 https://www.tensorflow.org/get_started/mnist/pros
 
+http://cv-tricks.com/tensorflow-tutorial/training-convolutional-neural-network-for-image-classification/
+
 https://pythonprogramming.net/tensorflow-neural-network-session-machine-learning-tutorial/?completed=/tensorflow-deep-neural-network-machine-learning-tutorial/
 
 python programming was AMAZING.
