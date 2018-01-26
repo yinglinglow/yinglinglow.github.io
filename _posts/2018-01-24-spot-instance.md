@@ -48,3 +48,8 @@ add custom, and type 22 in the port range.
 save.
 
 
+---
+
+for people who want to sync from local to s3 quicker - use `aws s3 sync <source> <target>`
+
+for example: `aws s3 sync . s3://my-bucket/path`
