@@ -38,11 +38,3 @@ DCGAN
 Dense, upsampling x 2, conv2d, output conv2d tanh
 4 discri
 
-
-__To try:__
-- increase batch size 1024
-- reduce number of images (40,000)
-- group similar images together (flatten and compare arrays, group similar ones together)
-- try WGAN
-- try vanilla GAN
-- batch normalisation vs xavier initialisation
