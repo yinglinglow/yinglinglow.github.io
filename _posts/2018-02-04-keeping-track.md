@@ -15,7 +15,7 @@ first i forgot to divide the data by 255 (smacks head); second somehow the code 
 so anyway, below you will see my keeping track so i don't end up in the same situation again (faints):
 
 3rd Feb (7pm): WGAN_010218.py with X_train_56_1503 (500 epoch test run) - success!
-3rd Feb (9pm): pokemon_gan.py with X_train_72_1503 (full run) - png file failed but let's check the pickle
+3rd Feb (9pm): pokemon_gan.py with X_train_72_1503 (full run) - failed :( almost all the same images! which is...a flower???
 4th Feb (7am): WGAN_010218.py with X_train_56_1280_frmcircles (full run) - in progress!
 
 fingers crossed...
