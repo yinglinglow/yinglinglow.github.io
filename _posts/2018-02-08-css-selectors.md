@@ -1,3 +1,13 @@
+---
+layout: post
+title: "css selectors for scraping"
+date: 2018-02-08
+---
+
+the pain of scraping... useful css selectors help!!!!
+
+amazing:
+https://data-lessons.github.io/library-webscraping/02-csssel/
 
 # select heading with h1
 response.css('h1#firstHeading::text').extract_first()
