@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "putting it together"
+title: "Putting it together - from data scraping to running the model on AWS"
 date: 2018-01-19
 ---
 

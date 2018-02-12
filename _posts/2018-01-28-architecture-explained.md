@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "architecture explained"
+title: "GAN architecture explained"
 date: 2018-01-28
 ---
 

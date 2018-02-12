@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "reverting on git"
+title: "Reverting on git"
 date: 2018-02-02
 ---
 

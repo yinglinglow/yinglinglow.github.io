@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "keeping track"
+title: "Keeping track - file naming"
 date: 2018-02-04
 ---
 
-name your files properly!! time date stamp.
+name your files properly!! time date stamp, e.g. - WGAN_020218_3pm
 
-otherwise you might end up in git hell (like i did) when u can't figure out which is the correct file to use, make wrong changes and commits, and have to struggle to roll back (and mess things up even more by pushing ur AWS access key online a SECOND TIME. who is so stupid?! gosh).
+otherwise you might end up in git hell (like i did) when u can't figure out which is the correct file to use, make wrong changes and commits, and have to struggle to roll back (and mess things up even more by pushing ur AWS access key online a SECOND TIME. who is so stupid?! gosh). #lessonlearnt
 
 WELL all's done now, so my piece of advice is - set the name of your training dataset as an argument to input. that way you KNOW you're not changing anything in the model, and hence it's the dataset that is actually giving you problems!
 

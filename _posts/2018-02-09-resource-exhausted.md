@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Resource Exhuasted Error while running GPU"
+date: 2018-02-08
+---
+
 if you ever come across this error:
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "css selectors for scraping"
+title: "CSS selectors for scraping"
 date: 2018-02-08
 ---
 

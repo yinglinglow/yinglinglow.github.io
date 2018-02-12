@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "trying the AWS spot instance"
+title: "Trying the AWS spot instance"
 date: 2018-01-24
 ---
 

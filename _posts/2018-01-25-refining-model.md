@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "refining the GAN model"
+title: "Refining the GAN model"
 date: 2018-01-25
 ---
 

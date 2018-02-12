@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "updating gitignore"
+title: "Updating gitignore to clean up your git repo"
 date: 2018-01-18
 ---
 
