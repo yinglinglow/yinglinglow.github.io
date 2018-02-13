@@ -13,10 +13,10 @@ Disclaimer: All of the below is purely for educational purposes!
 __Inspiration__
 The brand’s logo can be a business’ most important asset - and companies can spend up to millions of dollars on the logo design. Can we leverage on machine learning and existing logo designs to generate logos (for free)?
 
-__Goals__
+__Goal__
 Generate new logos from logos designed by humans
 
-__Dataset__
+__Obtaining Dataset__
 - 80,000 logos scraped from Wikipedia (for volume)
 * To be frank the results using 80k images were not fantastic - so if it is too much trouble, skip downloading this and just scrape from Google Images.
 
@@ -36,11 +36,12 @@ To download, use:
 1_1_2_downloading_wiki_pics.py
 ```
 
-
 - 2,000 logos scraped from Google Images (for quality)
 Use this: [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) from Hardik Vasa
 Use various keywords such as 'logo', 'logo circle', 'logo simple', 'logo vector', etc
-Be sure to look through your logos manually and ensure that they are of good quality.
+Be sure to look through your logos manually and ensure that:
+    - All white background
+    - Avoid words as much as possible
 
 Alternatively, you can download the folder of pictures I used, here: 
 
@@ -59,10 +60,10 @@ Markdown | Less | Pretty
 
 
 
-__Data cleaning__
+__Cleaning Dataset__
 
 Modelling
 
-Modelling results (loss graphs)
+Results (loss graphs)
 
 Tuning the best model

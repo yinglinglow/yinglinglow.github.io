@@ -1,2 +1,20 @@
 _site
 .DS_Store
+logo_160118/
+
+
+# Created by https://www.gitignore.io/api/git,visualstudiocode
+
+### Git ###
+*.orig
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+
+# End of https://www.gitignore.io/api/git,visualstudiocode
