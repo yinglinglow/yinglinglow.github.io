@@ -8,6 +8,8 @@ date: 2018-01-14
 as i struggle to get my act together, this has been immensely helpful in piecing things together
 
 http://cs231n.github.io/convolutional-networks/
+https://www.toptal.com/machine-learning/generative-adversarial-networks
+
 
 ---
 
@@ -42,3 +44,15 @@ https://github.com/pytorch/pytorch?utm_source=mybridge&utm_medium=blog&utm_campa
 
 if anyone ever wants to use pytorch instead of tensorflow (personally i would love to try pytorch!!)
 
+---
+
+other stuff on GANs:
+https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1
+https://towardsdatascience.com/implementing-a-generative-adversarial-network-gan-dcgan-to-draw-human-faces-8291616904a
+
+
+---
+
+interesting take on GANs
+
+https://openreview.net/pdf?id=ryj38zWRb
