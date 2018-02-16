@@ -32,7 +32,7 @@ somehow its all circles, and black and white... did i do something wrong???
 
 is it the augmentation that is screwing things up...? dont really get why it is black and blue though....?
 
-i will run it until 6500...can?
+i will run it until 5500...can?
 
 ---
 
