@@ -1,7 +1,28 @@
 ---
 layout: post
-title: "modifying GAN architecture"
+title: "Modifying GAN architecture"
 date: 2018-02-15
+---
+
+Ran WGAN_010218.py - 7pm 3 feb. cut at 500. Works!
+Ran pokemon_gan.py - 9pm 3feb. 
+
+---
+
+ran 8 feb WGAN_010218_bw 3pm 3feb 10000 epochs
+Ran 9 feb POC_050218_bw 7am X_train_28_813_1984
+
+---
+
+POC_increase_1_aws: 
+Dense, upsampling x 4, 2 maxpooling, conv2d, output conv2d
+4 discri
+
+POC_increase_2_aws: 
+Dense, upsampling x 4, 2 maxpooling, conv2d, output conv2d
+6 discri
+A loss goes to 0 very quickly
+
 ---
 
 so difficult!
@@ -73,3 +94,28 @@ something wrong!!! all grey. gulps.
 trying WGAN_010218.py from cloud
 on X_train_56_1700.pkl
 fingers crossed! try check on when 500.
+
+so dead - all grey!!!
+
+is something corrupted??
+
+---
+
+oh wait lol maybe i forgot to divide by 255.
+lalalala
+
+ok it doesnt work
+---
+
+17 feb 2018, 11pm:
+
+back to the original 010218, and original dataset.
+please just replicate!
+forgot to tmux. good job, girl, good job.
+now i have to stop after 500.
+
+MODEL=WGAN_010218.py
+XTRAIN=X_train_56_1503
+
+---
+
