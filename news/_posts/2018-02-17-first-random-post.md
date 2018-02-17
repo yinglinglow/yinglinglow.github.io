@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First random post"
+title: "This should be in the random news section"
 date: 2018-02-17
 ---
 
