@@ -117,5 +117,55 @@ now i have to stop after 500.
 MODEL=WGAN_010218.py
 XTRAIN=X_train_56_1503
 
+blurred! and dark grey. there must be something wrong.
+DCGAN works fine though.
+
 ---
 
+18 feb 2018, 11am:
+
+MODEL=WGAN_180218_11am.py
+XTRAIN=X_train_56_1503
+
+spun up new instance on gcloud. we'll see! to stop at 500.
+
+WGAN_180218_11am.py has best loss plots currently.
+but pictures are grey at 50! why.
+
+---
+
+18 feb 2018, 11.30am:
+
+export CODE=WGAN_010218
+export XTRAIN=X_train_56_1503
+
+spun up new instance on gcloud. we'll see! to stop at 500.
+
+still grey :(
+
+---
+18 feb 2018, 1.30pm:
+
+export CODE=WGAN_280118
+export XTRAIN=X_train_28_1503
+
+for SURE something wrong with gcp. shall run on aws tonight and see.
+
+
+---
+
+18 feb 2018, 11.28pm:
+
+export XTRAIN=X_train_56_1700.pkl
+export CODE=WGAN_180218_11am
+export DATE=180218
+
+no multiply by 255.
+
+fingers crossed!!! last attempt T.T
+
+YAAAAAAY THINGS ARE FORMING UP
+
+not at all sure why gcp doesnt work.
+must have been some installation problem...
+but dcgan works! weird...
