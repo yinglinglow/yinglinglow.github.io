@@ -4,11 +4,12 @@ title: "A GAN walkthrough (DCGAN and WGAN)"
 date: 2018-02-13
 ---
 
-__Content__
-
+__Content__<br>
 <a href='#introduction'>Introduction</a><br>
 <a href='#overview'>Overview</a><br>
-<a href='#structure'>Structure</a>
+<a href='#general-model-structure'>General Model Structure</a>
+<a href='#types-of-gan'>Types of GAN</a>
+<a href='#gan-walkthrough'>GAN Walkthrough</a>
 
 ## Introduction
 
@@ -38,9 +39,11 @@ The second model is the __Discriminator__: it takes both real images and fake im
 _Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1_
 
 
-## Structure
+## General Model Structure
 
-First, we build the generator. It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4).
+First, we build the generator. The generator captures the distribution of the training data and produces the most likely outcome, to maximise the probability of the discriminator making a mistake. 
+
+It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4).
 
 The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
 
@@ -61,19 +64,37 @@ The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 ch
 </table>
 _Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
 
-
+__Generator architecture__<br>
 <img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
 <br>
 _Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_
 
 
-__Inspiration__
+Then, we build the discriminator. It is a discriminative model to estimate the probability that a sample came from the training data rather than generator.
 
-The brand’s logo can be a business’ most important asset - and companies can spend up to millions of dollars on the logo design. Can we leverage on machine learning and existing logo designs to generate logos (for free)?
+The discriminator takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The output is from -1 to 1, where -1 is fake, and 1 is real.
 
-__Goal__
+__Convolution__<br>
+<img src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'>
+_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
 
-Generate new logos from logos designed by humans
+__Discriminator architecture__<br>
+<img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'>
+<br>
+_Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1_
+
+## Types of GAN
+
+There are several varieties of GAN: 
+    - __Vanilla GAN:__ minimises the f-divergence between the real data distribution and the generated data distribution
+    
+    - __DCGAN (Deep Convolutional GAN):__ first major improvement on GAN architecture - comes with a set of constraints to make them stable to train. Usually the baseline to compare with other GANs
+    
+    - __cGAN (Conditional GAN):__ takes in conditional information that describes some aspect of the data (labeled points for eyes, nose for a face)
+    
+    - __WGAN (Wasserstein GAN):__ uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
+
+## GAN Walkthrough
 
 __Obtaining Dataset__
 
@@ -110,14 +131,6 @@ Alternatively, you can download the folder of pictures I used, here:
 Download from here: https://fontawesome.com/, unzip and navigate into advanced-options, and raw-svg.
 This contains all the svg files (meaning they are stored as vectors instead of pixels). 
 To convert them into png files, 
-
-
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
 
 
 __Cleaning Dataset__
