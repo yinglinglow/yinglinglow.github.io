@@ -9,19 +9,28 @@ date: 2018-02-13
 Generative adversarial networks (GANs) - introduced by Ian Goodfellow in 2014, GANs can be used to generate new images that look real. Since 2016, advances have been made to generate images from text.
 
 Generating new Pokemons:
-<img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
 
+<img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
+<br>
 Credits: https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html
 
 
 Generating flowers from text:
-<img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
 
+<img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
+<br>
 Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf
 
 
 ## Overview
-<img height="500" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
+
+The idea is to train two models at the same time.
+
+One model is the __Generator__: it takes random noise as input and produces fake images.<br>
+The second model is the __Discriminator__: it takes both real images and fake images, and tries to identify which is real and which is fake.
+
+<img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
+<br>
 Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1
 
 
