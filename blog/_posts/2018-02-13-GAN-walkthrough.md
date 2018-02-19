@@ -1,22 +1,48 @@
 ---
 layout: post
-title: "GAN walkthrough"
-date: 2018-01-25
+title: "A GAN walkthrough (DCGAN and WGAN)"
+date: 2018-02-13
 ---
 
-__Aim of this post is:__
+## Introduction
+
+Generative adversarial networks (GANs) - introduced by Ian Goodfellow in 2014, GANs can be used to generate new images that look real. Since 2016, advances have been made to generate images from text.
+
+Generating new Pokemons:
+<img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
+
+Credits: https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html
+
+
+Generating flowers from text:
+<img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
+
+Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf
+
+
+## Overview
+<img height="500" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
+Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1
+
+
 1) for people who are new to deep learning and GAN 
+
 2) to learn about GAN, 
+
 3) and be able to run their own GAN.
+
 Disclaimer: All of the below is purely for educational purposes!
 
 __Inspiration__
+
 The brand’s logo can be a business’ most important asset - and companies can spend up to millions of dollars on the logo design. Can we leverage on machine learning and existing logo designs to generate logos (for free)?
 
 __Goal__
+
 Generate new logos from logos designed by humans
 
 __Obtaining Dataset__
+
 - 80,000 logos scraped from Wikipedia (for volume)
 * To be frank the results using 80k images were not fantastic - so if it is too much trouble, skip downloading this and just scrape from Google Images.
 
