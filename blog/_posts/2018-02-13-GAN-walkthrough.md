@@ -4,6 +4,9 @@ title: "A GAN walkthrough (DCGAN and WGAN)"
 date: 2018-02-13
 ---
 
+1. <a href='Introduction
+2. Overview
+
 ## Introduction
 
 Generative adversarial networks (GANs) - introduced by Ian Goodfellow in 2014, GANs can be used to generate new images that look real. Since 2016, advances have been made to generate images from text.
@@ -32,13 +35,30 @@ The second model is the __Discriminator__: it takes both real images and fake im
 _Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1_
 
 
-1) for people who are new to deep learning and GAN 
+## Structure
 
-2) to learn about GAN, 
+First, we build the generator. It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4).
 
-3) and be able to run their own GAN.
+The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
 
-Disclaimer: All of the below is purely for educational purposes!
+No padding, no strides, transposed:<br>
+<img src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif">
+<br>
+
+Padding, strides, transposed<br>
+<img src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif">
+<br>
+
+No padding, strides, transposed:<br>
+<img src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif">
+<br>
+_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
+
+
+<img src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
+<br>
+_Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_
+
 
 __Inspiration__
 
