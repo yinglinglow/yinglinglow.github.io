@@ -3,9 +3,11 @@ layout: post
 title: "A GAN walkthrough (DCGAN and WGAN)"
 date: 2018-02-13
 ---
-1. <a href='#introduction'>Introduction</a>
-2. <a href='#overview'>Overview</a>
-3. <a href='#structure'>Structure</a>
+
+__Content__
+<a href='#introduction'>Introduction</a>
+<a href='#overview'>Overview</a>
+<a href='#structure'>Structure</a>
 
 ## Introduction
 
@@ -42,14 +44,8 @@ First, we build the generator. It takes in random numbers (say, an array of 100 
 The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
 
 Transposed convolution: No padding, no strides, transposed | Transposed convolution: Padding, strides, transposed | Transposed convolution: No padding, strides, transposed
-
 --- | --- | ---
-
-<img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif"> | 
-
-<img height="100" src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif"> |
-
-<img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif"> |
+<img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif"> | <img height="100" src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif"> | <img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif">
 _Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
 
 
