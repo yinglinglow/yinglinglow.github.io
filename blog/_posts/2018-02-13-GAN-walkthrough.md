@@ -41,21 +41,19 @@ First, we build the generator. It takes in random numbers (say, an array of 100 
 
 The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
 
-Transposed convolution: No padding, no strides, transposed<br>
-<img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif">
-<br>
+Transposed convolution: No padding, no strides, transposed | Transposed convolution: Padding, strides, transposed | Transposed convolution: No padding, strides, transposed
 
-Transposed convolution: Padding, strides, transposed<br>
-<img height="100" src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif">
-<br>
+--- | --- | ---
 
-Transposed convolution: No padding, strides, transposed:<br>
-<img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif">
-<br>
+<img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif"> | 
+
+<img height="100" src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif"> |
+
+<img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif"> |
 _Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
 
 
-<img width="400" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
+<img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
 <br>
 _Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_
 
