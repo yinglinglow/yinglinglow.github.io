@@ -46,9 +46,12 @@ The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 ch
 
 <table style="width:100%">
   <tr>
-    <th>Transposed convolution: No padding, no strides, transposed</th>
-    <th>Transposed convolution: Padding, strides, transposed</th> 
-    <th>Transposed convolution: No padding, strides, transposed</th>
+    <td><b>Transposed convolution</b></td>
+  </tr>
+  <tr>
+    <td>No padding, no strides, transposed</td> 
+    <td>No padding, strides, transposed</td> 
+    <td>Padding, strides, transposed</td>
   </tr>
   <tr>
     <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif"></td>
