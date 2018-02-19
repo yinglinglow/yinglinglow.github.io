@@ -4,12 +4,13 @@ title: "A GAN walkthrough (DCGAN and WGAN)"
 date: 2018-02-13
 ---
 
-1. <a href='Introduction
-2. Overview
+1. <a href='#introduction'>Introduction</a>
+2. <a href='#overview'>Overview</a>
+3. <a href='#structure'>Structure</a>
 
 ## Introduction
 
-Generative adversarial networks (GANs) - introduced by Ian Goodfellow in 2014, GANs can be used to generate new images that look real. Since 2016, advances have been made to generate images from text.
+Generative adversarial networks (GANs) were introduced by Ian Goodfellow in 2014. GANs can be used to generate new images that look real and since 2016, even to generate images from text.
 
 Generating new Pokemons:<br>
 <img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
@@ -25,7 +26,7 @@ _Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016)
 
 ## Overview
 
-The idea is to train two models at the same time.
+The whole idea of GAN is to train two models at the same time.
 
 One model is the __Generator__: it takes random noise as input and produces fake images.<br>
 The second model is the __Discriminator__: it takes both real images and fake images, and tries to identify which is real and which is fake.
