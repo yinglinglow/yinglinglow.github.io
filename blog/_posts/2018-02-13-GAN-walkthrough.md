@@ -21,13 +21,13 @@ __Part 1 - GANs in general__<br>
 
 Generative adversarial networks (GANs) were introduced by Ian Goodfellow in 2014. GANs can be used to generate new images that look real and since 2016, even to generate images from text.
 
-Generating new Pokemons:<br>
+__Generating new Pokemons:__<br><br>
 <img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
 <br>
-_Credits: https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html_
+<small>_Credits: https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html_</small>
 
 
-Generating flowers from text:<br>
+__Generating flowers from text:__<br><br>
 <img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
 <br>
 _Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf_
@@ -35,8 +35,7 @@ _Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016)
 
 ## Overview
 
-The whole idea of GAN is to train two models at the same time.
-
+The whole idea of GAN is to train two models at the same time.<br>
 One model is the __Generator__: it takes random noise as input and produces fake images.<br>
 The second model is the __Discriminator__: it takes both real images and fake images, and tries to identify which is real and which is fake.
 
@@ -47,10 +46,8 @@ _Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/
 
 ## General Model Structure
 
-First, we build the generator. The generator captures the distribution of the training data and produces the most likely outcome, to maximise the probability of the discriminator making a mistake. 
-
-It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4).
-
+First, we build the generator. The generator captures the distribution of the training data and produces the most likely outcome, to maximise the probability of the discriminator making a mistake. <br>
+It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4). <br>
 The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
 
 <table style="width:100%">
@@ -76,8 +73,7 @@ __Generator architecture__<br>
 _Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_
 
 
-Then, we build the discriminator. It is a discriminative model to estimate the probability that a sample came from the training data rather than generator.
-
+Then, we build the discriminator. It is a discriminative model to estimate the probability that a sample came from the training data rather than generator.<br>
 The discriminator takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The output is from -1 to 1, where -1 is fake, and 1 is real.
 
 __Convolution__<br>
