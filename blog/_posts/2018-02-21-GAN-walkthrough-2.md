@@ -43,9 +43,11 @@ __2) Scrape 2,000 logos scraped from Google Images__
 Use this: [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) from Hardik Vasa
 
 Use various keywords such as _'logo'_, _'logo circle'_, _'logo simple'_, _'logo vector'_, etc. Be sure to look through your logos manually and ensure that they are of good quality. If you need to split logos arranged in a grid into individual photos, use:
-```bash
+
+<pre>```bash
 python3 1_3_split_pic.py --filename=abc.jpeg --col=3 --row=2
 ```
+</pre>
 
 Alternatively, you can simply download the folder of pictures I used, from `logos_originals_1700.zip`.
 
