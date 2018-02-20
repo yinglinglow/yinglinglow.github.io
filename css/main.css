@@ -25,10 +25,10 @@ h1 {
 }
 p {
     font-size: 1em;
-    line-height: 1.3em;
+    line-height: 1.1em;
     color: #333;
-    margin-top: 2em;
-    margin-bottom: 3em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -43,4 +43,21 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
 }
