@@ -5,17 +5,18 @@ date: 2018-02-20
 ---
 
 
-<a href='https://www.yinglinglow.com/blog/2018/02/13/#gans-in-general'>__Part 1 - GANs in general__</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/13/#introduction'>Introduction</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/13/#overview'>Overview</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/13/#general-model-structure'>General Model Structure</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/13/#types-of-gan'>Types of GAN</a>
+<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#gans-in-general'>__Part 1 - GANs in general__</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#introduction'>Introduction</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#overview'>Overview</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#general-model-structure'>General Model Structure</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#types-of-gan'>Types of GAN</a>
 
 <a href='#GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
-<a href='#obtaining-dataset'></a>Obtaining Dataset</a><br>
-<a href='#cleaning-dataset'></a>Cleaning Dataset</a><br>
-<a href='#set-up-cloud-platform'></a>Set up Cloud Platform</a><br>
-<a href='#modelling'></a>Modelling</a><br>
+<a href='#obtaining-dataset'>Obtaining Dataset</a><br>
+<a href='#cleaning-dataset'>Cleaning Dataset</a><br>
+<a href='#set-up-cloud-platform'>Set up Cloud Platform</a><br>
+<a href='#modelling'>Modelling</a><br>
+<a href='#results'>Results</a><br>
 
 # GAN Walkthrough
 
@@ -117,6 +118,6 @@ https://lernapparat.de/improved-wasserstein-gan/
 
 
 
-Results (loss graphs)
+## Results
 
 Tuning the best model
