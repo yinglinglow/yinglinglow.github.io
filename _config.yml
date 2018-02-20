@@ -1,6 +1,5 @@
 name: yinglinglow #testing123
 markdown: kramdown
-highlighter: pygments
 syntax-highlighting:
     enabled: true
     css: syntax.css
