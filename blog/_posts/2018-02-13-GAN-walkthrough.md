@@ -4,7 +4,7 @@ title: "A GAN walkthrough (DCGAN and WGAN)"
 date: 2018-02-13
 ---
 
-<a href='#gans-in-general'>__Part 1 - GANs in general__</a><br>
+__Part 1 - GANs in general__<br>
 <a href='#introduction'>Introduction</a><br>
 <a href='#overview'>Overview</a><br>
 <a href='#general-model-structure'>General Model Structure</a><br>
@@ -81,10 +81,10 @@ Then, we build the discriminator. It is a discriminative model to estimate the p
 The discriminator takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The output is from -1 to 1, where -1 is fake, and 1 is real.
 
 __Convolution__<br>
-<img src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'>
+<img height="70" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
 _Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
 
-__Discriminator architecture__<br>
+__Discriminator architecture__<br><br>
 <img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'>
 <br>
 _Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1_
@@ -102,5 +102,5 @@ There are several varieties of GAN:
   __WGAN (Wasserstein GAN):__ uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
 
 
-In <a href='#GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, we will go through the actual steps of running your very own GAN!
+In <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, we will go through the actual steps of running your very own GAN!
 
