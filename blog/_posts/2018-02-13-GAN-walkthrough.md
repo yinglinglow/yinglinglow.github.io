@@ -13,7 +13,12 @@ __Part 1 - GANs in general__<br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#obtaining-dataset'>Obtaining Dataset</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#cleaning-dataset'>Cleaning Dataset</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#modelling'>Modelling</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#running-the-model'>Running the Model</a><br>
+
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#results'>Results</a>
+
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#future-improvements'>Future Improvements</a>
+
 
 
 # GANs in general
@@ -98,5 +103,23 @@ There are several varieties of GAN:
   __WGAN (Wasserstein GAN):__ uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
 
 
-In <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, we will go through the actual steps of running your very own GAN!
+We will be running DCGAN and WGAN-GP in Part 2!
 
+We are using WGAN-GP instead of WGAN because even WGANs can fail to converge. For the approximation of the Wasserstein (Earth-Mover) distance to be valid, WGAN imposed weight clipping constraints on the critic (discriminator) causing:
+- The optimizer with gradient clipping to search the discriminator in a space smaller than 1-Lipschitz, biasing the discriminator toward simpler functions.
+- Clipped gradients vanish or explode as they back-propagate through network layers.
+
+Architecture guidelines:
+- WGAN-GP (instead of clipping weights) penalises the norm of gradient of the discriminator with respect to its input.
+
+http://mathworld.wolfram.com/LipschitzFunction.html
+
+
+Intuitively, a Lipschitz continuous function is limited in how fast it can change: there exists a definite real number such that, for every pair of points on the graph of this function, the absolute value of the slope of the line connecting them is not greater than this real number; this bound is called a Lipschitz constant of the function (or modulus of uniform continuity). For instance, every function that has bounded first derivatives is Lipschitz.[1]
+
+[https://en.wikipedia.org/wiki/Lipschitz_continuity]
+
+https://lernapparat.de/improved-wasserstein-gan/
+
+
+Let's head over to <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!

@@ -11,50 +11,59 @@ date: 2018-02-20
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#general-model-structure'>General Model Structure</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#types-of-gan'>Types of GAN</a>
 
-<a href='#GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
+__Part 2 - GAN Walkthrough__<br>
 <a href='#obtaining-dataset'>Obtaining Dataset</a><br>
 <a href='#cleaning-dataset'>Cleaning Dataset</a><br>
 <a href='#set-up-cloud-platform'>Set up Cloud Platform</a><br>
-<a href='#modelling'>Modelling</a><br>
-<a href='#results'>Results</a><br>
+<a href='#running-the-model'>Running the Model</a><br>
+<a href='#results'>Results</a>
+<a href='#future-improvements'>Future Improvements</a>
 
 # GAN Walkthrough
-
 ## Obtaining Dataset
 
-- 80,000 logos scraped from Wikipedia (for volume)
-* To be frank the results using 80k images were not fantastic - so if it is too much trouble, skip downloading this and just scrape from Google Images.
+There are 3 different ways to obtain your starting images - I recommend method 2 (scraping from Google Images).
 
-To scrap, use `1_1_1_wikispider.py`, which saves all the links into 'items.csv' in a tab delimited csv.
+__1) Scrape 80,000 logos from Wikipedia__
 
+Scrape all the links for the images from [Wikipedia page](https://commons.wikimedia.org/wiki/Category:Unidentified_logos) and save it to and items.csv file, using:
 ```bash
-scrapy runspider wikispider.py -o items.csv -t csv
-```
-Subsequently, there are a few options (I recommend the third!!):
-1) download the files to your local drive and store them there
-2) download the files directly into AWS (saves space on your local drive, but slow)
-3) download the files to your local drive and upload to AWS via awscli (much faster)
-
-Edit from line 54/55 for csv_filename and bucketname if necessary.
-To download, use:
-```bash
-1_1_2_downloading_wiki_pics.py
+scrapy runspider 1_1_wikispider.py -o items.csv -t csv
 ```
 
-- 2,000 logos scraped from Google Images (for quality)
+To download all the images, use:
+```bash
+python3 1_2_downloading_wiki_pics.py --filename=items.csv --local=True
+```
+
+<img src='https://user-images.githubusercontent.com/21985915/36363186-dd9d4e80-1575-11e8-98d5-aa797107ee4c.png' width=400>
+
+__2) Scrape 2,000 logos scraped from Google Images__
+
 Use this: [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) from Hardik Vasa
-Use various keywords such as 'logo', 'logo circle', 'logo simple', 'logo vector', etc
-Be sure to look through your logos manually and ensure that:
-    - All white background
-    - Avoid words as much as possible
 
-Alternatively, you can download the folder of pictures I used, here: 
+Use various keywords such as _'logo'_, _'logo circle'_, _'logo simple'_, _'logo vector'_, etc. Be sure to look through your logos manually and ensure that they are of good quality. If you need to split logos arranged in a grid into individual photos, use:
+```bash
+python3 1_3_split_pic.py --filename=abc.jpeg --col=3 --row=2
+```
+
+Alternatively, you can simply download the folder of pictures I used, from `logos_originals_1700.zip`.
+
+<img src='https://user-images.githubusercontent.com/21985915/36361926-0df0aa24-156b-11e8-964e-42cb13c0de9c.png' width=400>
 
 
-- 800 logos downloaded from Font Awesome (for black and white logos)
-Download from here: https://fontawesome.com/, unzip and navigate into advanced-options, and raw-svg.
-This contains all the svg files (meaning they are stored as vectors instead of pixels). 
-To convert them into png files, 
+__3) Download 800 logos from Font Awesome (black and white)__
+
+Download from here: https://fontawesome.com/
+
+Unzip and navigate into advanced-options, and raw-svg.
+
+This contains all the svg files (meaning they are stored as vectors instead of pixels). To convert them into png files, use:
+```bash
+python3 1_4_convert_svg_png.py --path=/Users/xxx/svgtopng/
+```
+
+<img src='https://user-images.githubusercontent.com/21985915/36363188-e31f908e-1575-11e8-9612-1b87209f1a81.png' width=400>
 
 
 ## Cleaning Dataset
@@ -86,38 +95,66 @@ __(if you do not have a GPU)__
 Use `setup-aws.sh` for AWS EC2, or `setup-gcp.sh` for Google Cloud Platform.
 *In progress - DCGAN works fine on GCP but WGAN has some issues, potentially due to installation problems :(
 
-## Modelling
+## Running the Model
 
-Overall GANs:
+DCGAN base code was from [https://github.com/roatienza/Deep-Learning-Experiments/blob/master/Experiments/Tensorflow/GAN/dcgan_mnist.py](https://github.com/roatienza/Deep-Learning-Experiments/blob/master/Experiments/Tensorflow/GAN/dcgan_mnist.py)
 
-- Vanilla GAN: minimises the f-divergence between the real data distribution and the generated data distribution
-- DCGAN (Deep Convolutional GAN): first major improvement on GAN architecture - comes with a set of constraints to make them stable to train. Usually the baseline to compare with other GANs
-- cGAN (Conditional GAN): takes in conditional information that describes some aspect of the data (labeled points for eyes, nose for a face)
-- WGAN (Wasserstein GAN): uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
+WGAN-GP base code was from [https://github.com/keras-team/keras-contrib/blob/master/examples/improved_wgan.py](https://github.com/keras-team/keras-contrib/blob/master/examples/improved_wgan.py)
 
-1) DCGAN
+Use `run-model.sh` to run the model. 
+Change the variables accordingly to whichever model or XTRAIN set you are using.
 
-2) WGAN-GP
+```bash
+git clone https://github.com/yinglinglow/gan_walkthrough.git
+cd gan_walkthrough
+mkdir gan
+mkdir gan_models
 
-Reason: even WGANs can fail to converge. For the approximation of the Wasserstein (Earth-Mover) distance to be valid, WGAN imposed weight clipping constraints on the critic (discriminator) causing:
-- The optimizer with gradient clipping to search the discriminator in a space smaller than 1-Lipschitz, biasing the discriminator toward simpler functions.
-- Clipped gradients vanish or explode as they back-propagate through network layers.
+# open tmux
+tmux
 
-Architecture guidelines:
-- WGAN-GP (instead of clipping weights) penalises the norm of gradient of the discriminator with respect to its input.
+# change your variables accordingly if necessary
+export XTRAIN=X_train_56_1700.pkl
+export CODE=WGAN_180218_11am
+export DATE=180218
 
-http://mathworld.wolfram.com/LipschitzFunction.html
-
-
-Intuitively, a Lipschitz continuous function is limited in how fast it can change: there exists a definite real number such that, for every pair of points on the graph of this function, the absolute value of the slope of the line connecting them is not greater than this real number; this bound is called a Lipschitz constant of the function (or modulus of uniform continuity). For instance, every function that has bounded first derivatives is Lipschitz.[1]
-
-[https://en.wikipedia.org/wiki/Lipschitz_continuity]
-
-https://lernapparat.de/improved-wasserstein-gan/
-
-
+# run the model
+python3 $CODE.py
+```
 
 
 ## Results
 
-Tuning the best model
+__1) DCGAN__
+
+<br><br>
+Epoch: 3000
+
+<img src='https://user-images.githubusercontent.com/21985915/36361986-a2bd0bac-156b-11e8-9d07-fb39dc348440.png' width=200>
+
+<br><br>
+
+__2) WGAN-GP__
+
+<br><br>
+Epoch: 2000
+
+<img src='https://user-images.githubusercontent.com/21985915/36361988-a320d7e0-156b-11e8-961f-13719a3c1088.png' width=200>
+
+
+Epoch: 2500
+
+<img src='https://user-images.githubusercontent.com/21985915/36361989-a351681a-156b-11e8-9220-c514a66e1b1d.png' width=200>
+
+
+Epoch: 3000
+
+<img src='https://user-images.githubusercontent.com/21985915/36361990-a3885618-156b-11e8-9975-dc16a7ca323a.png' width=200>
+
+
+## Future Improvements
+
+Other models to attempt: 
+- Variational Autoencoders
+- Generative Latent Optimization (GLO)
+- Creative Adversarial Network (CAN)
