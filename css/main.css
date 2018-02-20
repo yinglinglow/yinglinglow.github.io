@@ -46,6 +46,5 @@ ul.posts li {
 }
 
 .highlight  { 
-    background: #999;
-    border: 1px solid #000!important;
+    background: rgb(223, 223, 223);
 }
