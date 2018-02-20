@@ -10,7 +10,6 @@ I know we all want to jump right in to running our own GANs (as did I), but let'
 
 __Part 1 - GANs in general__<br>
 <a href='#introduction'>Introduction</a><br>
-<a href='#overview'>Overview</a><br>
 <a href='#general-model-structure'>General Model Structure</a><br>
 <a href='#types-of-gan'>Types of GAN</a>
 
@@ -25,42 +24,55 @@ __Part 1 - GANs in general__<br>
 # GANs in general
 ## Introduction
 
-Before GANs, how did we generate new images? Apart from picking up a pencil and drawing them ourselves, we attempted to teach machines to generate them by telling them what is right, and what is wrong. Unfortunately, there is a limited amount of labelled data and human effort to teach the machines. Machines learn differently from humans - say a child could learn to identify an apple after maybe showing him 5 times an apple picture, but a machine needs upwards of 10,000 images to learn to identify an apple! Imagine being a teacher to a machine...
+Before GANs, how did we generate new images? Apart from picking up a pencil and drawing them ourselves, we attempted to teach machines to generate them by telling them what is right, and what is wrong. Unfortunately, there is a limited amount of labelled data and human effort we can dedicate to teaching the machines. Machines learn differently from humans - say a child could learn to identify an apple after he is shown an apple picture 5 times, but a machine needs upwards of 10,000 images to learn to identify an apple! Imagine being a teacher to a machine...
 
-In any case, that was what motivated Ian Goodfellow to create two machines, together! A 'generator' to generate fake images, and a 'discriminator' to tell the generator whether its fake images look real or not. More details [here](https://www.wired.com/2017/04/googles-dueling-neural-networks-spar-get-smarter-no-humans-required/)!
+In any case, that was what motivated Ian Goodfellow to develop GANs - he thought, why not create another machine to teach the machine? A 'generator' to generate fake images, and a 'discriminator' to tell the generator whether its fake images look real or not. And hence, the GAN was born (more details [here](https://www.wired.com/2017/04/googles-dueling-neural-networks-spar-get-smarter-no-humans-required/)!).
 
-Since his introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model - now, we can even generate images from text!! Imagine reading a Harry Potter book and images generating as you go along...!!!
+Since his introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model - now, we can even generate images from text!! Imagine reading a Harry Potter book and images generating as you go along...
 
-
+<pre>
 __Generating new Pokemons:__<br><br>
 <img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
 <br>
 <small>_Credits: https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html_</small>
 
+__Generating fake bedrooms:__<br><br>
+<img width="500" alt="bedroom" src="https://user-images.githubusercontent.com/21985915/36432837-21398386-1696-11e8-9dc7-f9bbb53e6ae6.png">
+<br>
+<small>_Credits:https://arxiv.org/abs/1511.06434v2_</small>
 
 __Generating flowers from text:__<br><br>
 <img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
 <br>
 <small>_Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf_</small>
-
-
-## Overview
-
-So as mentioned earlier - the whole idea of GAN is to train two models at the same time.<br>
-One model is the __Generator__: it takes random noise as input and produces fake images.<br>
-The second model is the __Discriminator__: actually, it takes both real images and fake images as input, and has to figure out how to identify which are real images and which are fake images.
-
-<img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
-<br>
-<small>_Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1_</small>
-
+</pre>
 
 ## General Model Structure
 
-First, we build the generator model. The generator captures the distribution of the training data and produces the most likely outcome, to maximise the probability of the discriminator making a mistake. <br>
-It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4). <br>
-The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
+Let's look at the general structure of a GAN. In a GAN, two models are trained at the same time.<br>
+One model is the __Generator__: it takes random noise as input and produces fake images.<br>
+The second model is the __Discriminator__: it takes both real images and fake images (created by the Generator) as input, and has to figure out how to identify which are real images and which are fake!
 
+<pre>
+<img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
+<br>
+<small>_Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1_</small>
+</pre>
+
+Conceptually, the generator basically tries to learn all the possibilities of a real image, and return the most likely image of a dog. For example, it can learn that images of dogs with black, brown or white fur can all be real; an image of a dog with two eyes is real, but an image of a dog with three eyes is not! Hence it can return a two eyed black dog or a two eyed brown dog, but not likely a three eyed black dog. In such a way, it tries to produce fake images that are as real as possible, so as to trick the Discriminator! Essentially, the generator is trying to capture the distribution of the training data and produce the most likely outcome, to maximise the probability of the discriminator making a mistake.
+
+How does the Discriminator actually 'learn' though? Honestly, at the beginning things are quite random. It generates random inputs and gives them to the Discriminator. Perhaps the Discriminator gets tricked, and says that a few of the images are real! Now the generator will make more fake images similar to those, and gets better at tricking the Discriminator!
+
+You might wonder, how will the Discriminator be so stupid as to think random images are real? In fact the Discriminator at the beginning does not know what is real or fake as well! It is randomly picking, before it receives feedback as to which images are actually true or fake. From this feedback, it begins to learn all the different possibilities of a real image (capturing the distribution of the true data), and from there differentiate between real or fake images. Technically, it assesses the likelihood of the picture coming from the true data distribution; the lower this likelihood, the lower the chances of it being a real image.
+
+From the above example, we can see that it is important for the Generator and the Discriminator to be at similar levels, so that they can teach each other! Imagine if the Discriminator is so good at identifying fake images that it knows that all of the Generator images are fake - the Generator will have no feedback to improve! This is one of the more troubling problems when training a GAN.
+
+__Generator architecture__<br>
+Zooming into the Generator model (which produces the fake image) - specifically, the Generator takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. In between, transposed convolution (also known as fractionally strided convolutions/ deconvolution) is increasing the size of the image (e.g. from a 2x2 to a 4x4). The animations below show the different manners in which a smaller image (blue squares) can be formed up into a larger image (green). The final output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 colour channels).
+
+<small>For those interested, Adit did a [fantastic writeup here](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/) explaining in detail the workings of CNNs.</small>
+
+<pre>
 <table style="width:100%">
   <tr>
     <td><b>Transposed convolution</b></td>
@@ -78,54 +90,54 @@ The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 ch
 </table>
 <small>_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_</small>
 
-__Generator architecture__<br>
+
 <img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
 <br>
 <small>_Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_</small>
+</pre>
 
+__Discriminator architecture__<br>
+For the discriminator, it takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The convolution gif belows shows how the original number of values (in blue) is reduced (green). Eventually it returns a binary output, classifying the image as real or fake.
 
-Then, we build the discriminator. It is a discriminative model to estimate the probability that a sample came from the training data rather than generator.<br>
-The discriminator takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The output is from -1 to 1, where -1 is fake, and 1 is real.
-
+<pre>
 __Convolution__<br>
 <img height="70" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
 _Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
 
-__Discriminator architecture__<br><br>
+
 <img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'>
 <br>
 _Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1_
+</pre>
 
 ## Types of GAN
 
-There are several varieties of GAN: 
+Now that we understand in general how a GAN works, let's look at the different types of GAN. Yes, just like pokemon (and all living things), they evolve. People got very excited after Ian introduced GANs, and given how difficult it was to train stable GANs (imagine all the different things you can tweak!), everyone started trying new things to improve GANs.
 
-  __Vanilla GAN:__ minimises the f-divergence between the real data distribution and the generated data distribution
+There are many different varieties of GAN - you can refer [here](https://github.com/GKalliatakis/Delving-deep-into-GANs) for a (highly) extended list, but I shall briefly touch on a few of the more popular ones:
+
+  __Vanilla GAN:__ <br>
+  This is the original GAN by Ian. Basically, it minimises the f-divergence (read: difference in two distributions) between the real data distribution and the generated data distribution.
     
-  __DCGAN (Deep Convolutional GAN):__ first major improvement on GAN architecture - comes with a set of constraints to make them stable to train. Usually the baseline to compare with other GANs
+  __DCGAN (Deep Convolutional GAN):__<br> 
+  This was the first major improvement on GAN architecture - basically the authors proposed a set of constraints to make GANs stable to train. Apparently, they are usually used as the baseline to compare with other newer GANs (aka if your fancier GAN doesn't perform better than a DCGAN, you're out of the game buddy.)
     
-  __cGAN (Conditional GAN):__ takes in conditional information that describes some aspect of the data (labeled points for eyes, nose for a face)
+  __cGAN (Conditional GAN):__<br> 
+  This GAN interesting, comes with a little bit of help - it takes in conditional information that describes some aspect of the data (aka labeled points for eyes, nose for a face). So we are giving our GANs a little help here, if you will.
     
-  __WGAN (Wasserstein GAN):__ uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
+  __WGAN (Wasserstein GAN):__ 
+  Now this is interesting. Remember the original GAN just looks that the difference between the real data distribution and the generated data distribution? There's a caveat - if the true and fake distributions do not overlap, the feedback given is just 0 or infinity. How can the Discriminator or Generator learn effectively? That's part of the reason why GANs are so difficult to train. Enter the Wasserstein-1 distance (Earth-Mover distance) - basically in this case, even if the two distributions have no overlap, at least it describes how far apart they are so that they can learn (instead of just returning 0 or infinity!)
 
 
-We will be running DCGAN and WGAN-GP in Part 2!
+You would be pleased to know that we will be running DCGAN and WGAN in our walkthrough later on. In the meantime, let me talk a little more about WGAN since we will be running a slight variation of that.
 
-We are using WGAN-GP instead of WGAN because even WGANs can fail to converge. For the approximation of the Wasserstein (Earth-Mover) distance to be valid, WGAN imposed weight clipping constraints on the critic (discriminator) causing:
+We will be using WGAN-GP (GP for Gradient Penalty) instead of WGAN - because even WGANs can fail to converge! In human terms, for the Wasserstein distance to work, it had to be limited by how fast it can change. To enforce this, the authors of WGAN forced (aka 'clipped') the values to stay within a certain threshold. For example, if the threshold is (-1,1), anything greater than 1 will be 1, and those less than -1 will be -1. However, forcing numbers to stay within such a range can siginificantly impact the final results as the values pass through the layers (in practical terms, your picture of a bedroom can suddenly have empty white spaces in the middle of the image!). 
+
+In mathematical terms, for the approximation of the Wasserstein (Earth-Mover) distance to be valid, weight clipping constraints had to be imposed on the Discriminator resulting in:
 - The optimizer with gradient clipping to search the discriminator in a space smaller than 1-Lipschitz, biasing the discriminator toward simpler functions.
-- Clipped gradients vanish or explode as they back-propagate through network layers.
+- Clipped gradients vanishing or exploding as they back-propagate through network layers.
 
-Architecture guidelines:
-- WGAN-GP (instead of clipping weights) penalises the norm of gradient of the discriminator with respect to its input.
-
-http://mathworld.wolfram.com/LipschitzFunction.html
+Hence, instead of clipping weights as in WGAN, WGAN-GP penalises the norm of gradient of the discriminator with respect to its input. In human terms, this means that the bigger your gradient norm (maximum rate of change), the more you will be penalised.
 
 
-Intuitively, a Lipschitz continuous function is limited in how fast it can change: there exists a definite real number such that, for every pair of points on the graph of this function, the absolute value of the slope of the line connecting them is not greater than this real number; this bound is called a Lipschitz constant of the function (or modulus of uniform continuity). For instance, every function that has bounded first derivatives is Lipschitz.[1]
-
-[https://en.wikipedia.org/wiki/Lipschitz_continuity]
-
-https://lernapparat.de/improved-wasserstein-gan/
-
-
-Let's head over to <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!
+Whew! You made it through all that - well done. Let's get down to business now (finally!) and head over to <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!
