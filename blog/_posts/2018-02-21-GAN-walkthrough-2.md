@@ -73,14 +73,14 @@ __1) Center crop and resize to 56 x 56__
 
 To center crop and resize them, use:
 ```bash
-python3 1_5_resize_centre.py --path=/Users/xxx/to_resize/
+python3 1_5_resize_centre.py --path=/Users/xxx/to_resize/ --size=56
 ```
 
 __2) Append to array__
 
 To convert all pictures to one big array and pickle it, use:
 ```bash
-python3 1_6_resize_to_array.py --path=/Users/xxx/resized/ --height=56 --target_path=/Users/xxx/ to_augment=True
+python3 1_6_resize_to_array.py --path=/Users/xxx/resized/ --height=56 --target_path=/Users/xxx/ augment=True
 ```
 
 __3) Upload array to S3__
