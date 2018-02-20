@@ -44,16 +44,3 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-
-.highlight {
-    background: #666;
-    color: #666;
-    font-family: monospace;
-    font-size: 14px;
-    margin: 20px 0;
-    overflow: auto;
-    padding: 20px;
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
