@@ -44,3 +44,5 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+.highlight  { background: #999; }
