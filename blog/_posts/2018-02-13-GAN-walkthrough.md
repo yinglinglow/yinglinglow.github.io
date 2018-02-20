@@ -92,10 +92,15 @@ _Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1_
 ## Types of GAN
 
 There are several varieties of GAN: 
-    - __Vanilla GAN:__ minimises the f-divergence between the real data distribution and the generated data distribution
+
+  __Vanilla GAN:__ minimises the f-divergence between the real data distribution and the generated data distribution
     
-    - __DCGAN (Deep Convolutional GAN):__ first major improvement on GAN architecture - comes with a set of constraints to make them stable to train. Usually the baseline to compare with other GANs
+  __DCGAN (Deep Convolutional GAN):__ first major improvement on GAN architecture - comes with a set of constraints to make them stable to train. Usually the baseline to compare with other GANs
     
-    - __cGAN (Conditional GAN):__ takes in conditional information that describes some aspect of the data (labeled points for eyes, nose for a face)
+  __cGAN (Conditional GAN):__ takes in conditional information that describes some aspect of the data (labeled points for eyes, nose for a face)
     
-    - __WGAN (Wasserstein GAN):__ uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
+  __WGAN (Wasserstein GAN):__ uses Wasserstein-1 distance (Earth-mover distance) so that even if the true and fake distributions do not overlap, the distance describes how far apart they are (instead of just returning 0 or infinity)
+
+
+In <a href='#GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, we will go through the actual steps of running your very own GAN!
+
