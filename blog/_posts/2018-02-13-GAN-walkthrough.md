@@ -11,13 +11,11 @@ __Part 1 - GANs in general__<br>
 <a href='#types-of-gan'>Types of GAN</a>
 
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#obtaining-dataset'>Obtaining Dataset</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#cleaning-dataset'>Cleaning Dataset</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#running-the-model'>Running the Model</a><br>
-
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#results'>Results</a><br>
-
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#future-improvements'>Future Improvements</a>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#obtaining-dataset'>Obtaining Dataset</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#cleaning-dataset'>Cleaning Dataset</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#running-the-model'>Running the Model</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#results'>Results</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#future-improvements'>Future Improvements</a>
 
 
 
