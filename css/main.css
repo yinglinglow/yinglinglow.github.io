@@ -45,6 +45,6 @@ ul.posts li {
     list-style: none;
 }
 
-.highlight  { 
-    background: rgb(223, 223, 223);
+pre {
+    padding: 10px;
 }
