@@ -10,10 +10,10 @@ date: 2018-02-13
 <a href='#general-model-structure'>General Model Structure</a><br>
 <a href='#types-of-gan'>Types of GAN</a>
 
-<a href='https://www.yinglinglow.com/blog/2018/02/21/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/21/GAN-walkthrough-2/#obtaining-dataset'></a>Obtaining Dataset</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/21/GAN-walkthrough-2/#cleaning-dataset'></a>Cleaning Dataset</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/21/GAN-walkthrough-2/#modelling'></a>Modelling</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#obtaining-dataset'></a>Obtaining Dataset</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#cleaning-dataset'></a>Cleaning Dataset</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2/#modelling'></a>Modelling</a><br>
 
 
 # GANs in general

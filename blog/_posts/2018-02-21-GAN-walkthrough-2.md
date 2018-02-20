@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "A GAN walkthrough (DCGAN and WGAN)"
+title: "A GAN walkthrough (DCGAN and WGAN) - Part 2"
 date: 2018-02-20
 ---
 
 
-<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#gans-in-general'>__Part 1 - GANs in general__</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough'>__Part 1 - GANs in general__</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#introduction'>Introduction</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#overview'>Overview</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#general-model-structure'>General Model Structure</a><br>
