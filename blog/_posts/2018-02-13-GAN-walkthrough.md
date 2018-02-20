@@ -4,6 +4,12 @@ title: "A GAN walkthrough (DCGAN and WGAN)"
 date: 2018-02-13
 ---
 
+## A Beginner's Guide To GAN (Generative Adversarial Network)
+
+Imagine a world where we can generate endless pokemon, fake human faces, fake cats, dogs, rabbits... the list goes on forever!! Well, that future is NOW. Pretty sure Ian Goodfellow, the good gentleman who introduced us to the world of GANs, wasn't thinking about all pokemon, dogs and cats when he came up with the idea of GANs (actually he was having an argument in a bar) but that's all right... right? <br>
+
+I know we all want to jump right in to running our own GANs (as did I), but let's go a little into the background of GANs first so that we can fully appreciate its tremendous power...
+
 __Part 1 - GANs in general__<br>
 <a href='#introduction'>Introduction</a><br>
 <a href='#overview'>Overview</a><br>
@@ -18,11 +24,15 @@ __Part 1 - GANs in general__<br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#future-improvements'>Future Improvements</a>
 
 
-
 # GANs in general
 ## Introduction
 
-Generative adversarial networks (GANs) were introduced by Ian Goodfellow in 2014. GANs can be used to generate new images that look real and since 2016, even to generate images from text.
+Before GANs, how did we generate new images? Apart from picking up a pencil and drawing them ourselves, we attempted to teach machines to generate them by telling them what is right, and what is wrong. Unfortunately, there is a limited amount of labelled data and human effort to teach the machines. Machines learn differently from humans - say a child could learn to identify an apple after maybe showing him 5 times an apple picture, but a machine needs upwards of 10,000 images to learn to identify an apple! Imagine being a teacher to a machine...
+
+In any case, that was what motivated Ian Goodfellow to create two machines, together! A 'generator' to generate fake images, and a 'discriminator' to tell the generator whether its fake images look real or not. More details [here](https://www.wired.com/2017/04/googles-dueling-neural-networks-spar-get-smarter-no-humans-required/)!
+
+Since his introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model - now, we can even generate images from text!! Imagine reading a Harry Potter book and images generating as you go along...!!!
+
 
 __Generating new Pokemons:__<br><br>
 <img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
@@ -33,23 +43,23 @@ __Generating new Pokemons:__<br><br>
 __Generating flowers from text:__<br><br>
 <img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
 <br>
-_Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf_
+<small>_Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf_</small>
 
 
 ## Overview
 
-The whole idea of GAN is to train two models at the same time.<br>
+So as mentioned earlier - the whole idea of GAN is to train two models at the same time.<br>
 One model is the __Generator__: it takes random noise as input and produces fake images.<br>
-The second model is the __Discriminator__: it takes both real images and fake images, and tries to identify which is real and which is fake.
+The second model is the __Discriminator__: actually, it takes both real images and fake images as input, and has to figure out how to identify which are real images and which are fake images.
 
 <img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
 <br>
-_Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1_
+<small>_Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1_</small>
 
 
 ## General Model Structure
 
-First, we build the generator. The generator captures the distribution of the training data and produces the most likely outcome, to maximise the probability of the discriminator making a mistake. <br>
+First, we build the generator model. The generator captures the distribution of the training data and produces the most likely outcome, to maximise the probability of the discriminator making a mistake. <br>
 It takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. Using transposed convolution (also known as fractionally strided convolutions/ deconvolution), the image size increases (e.g. from a 2x2 to a 4x4). <br>
 The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 channels).
 
@@ -68,12 +78,12 @@ The output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 ch
     <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif"></td>
   </tr>
 </table>
-_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
+<small>_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_</small>
 
 __Generator architecture__<br>
 <img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
 <br>
-_Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_
+<small>_Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_</small>
 
 
 Then, we build the discriminator. It is a discriminative model to estimate the probability that a sample came from the training data rather than generator.<br>
