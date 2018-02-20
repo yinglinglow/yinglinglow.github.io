@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "A GAN walkthrough (DCGAN and WGAN)"
+title: "A Beginner's Guide To GAN (Generative Adversarial Network)"
 date: 2018-02-13
 ---
-
-## A Beginner's Guide To GAN (Generative Adversarial Network)
 
 Imagine a world where we can generate endless pokemon, fake human faces, fake cats, dogs, rabbits... the list goes on forever!! Well, that future is NOW. Pretty sure Ian Goodfellow, the good gentleman who introduced us to the world of GANs, wasn't thinking about all pokemon, dogs and cats when he came up with the idea of GANs (actually he was having an argument in a bar) but that's all right... right? <br>
 
