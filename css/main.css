@@ -25,10 +25,10 @@ h1 {
 }
 p {
     font-size: 1em;
-    line-height: 1.1em;
+    line-height: 1.3em;
     color: #333;
     margin-top: 1.5em;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -45,4 +45,7 @@ ul.posts li {
     list-style: none;
 }
 
-.highlight  { background: #999; }
+.highlight  { 
+    background: #999;
+    border: 1px solid #000!important;
+}
