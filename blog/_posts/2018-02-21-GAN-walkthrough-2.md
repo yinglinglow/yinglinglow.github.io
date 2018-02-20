@@ -26,7 +26,7 @@ There are 3 different ways to obtain your starting images - I recommend method 2
 
 __1) Scrape 80,000 logos from Wikipedia__
 
-Scrape all the links for the images from [Wikipedia page](https://commons.wikimedia.org/wiki/Category:Unidentified_logos) and save it to and items.csv file, using:
+Scrape all the links for the images from [Wikipedia page](https://commons.wikimedia.org/wiki/Category:Unidentified_logos) and save it to an items.csv file, using:
 ```bash
 scrapy runspider 1_1_wikispider.py -o items.csv -t csv
 ```
