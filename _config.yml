@@ -1,6 +1,9 @@
 name: yinglinglow #testing123
 markdown: kramdown
 highlighter: pygments
+syntax-highlighting:
+    enabled: true
+    css: syntax.css
 
 permalink: /blog/:year/:month/:day/:title
 google_analytics: UA—113953178-1
