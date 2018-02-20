@@ -1,5 +1,6 @@
 name: yinglinglow #testing123
 markdown: kramdown
+highlighter: pygments
 
 permalink: /blog/:year/:month/:day/:title
 google_analytics: UA—113953178-1
