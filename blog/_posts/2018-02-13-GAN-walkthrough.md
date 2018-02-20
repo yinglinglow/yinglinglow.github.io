@@ -128,4 +128,4 @@ Intuitively, a Lipschitz continuous function is limited in how fast it can chang
 https://lernapparat.de/improved-wasserstein-gan/
 
 
-Let's head over to <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!
+Let's head over to <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!
