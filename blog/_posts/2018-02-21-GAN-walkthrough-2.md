@@ -205,14 +205,11 @@ Epoch: 3000 <br>
 
 __2) WGAN-GP (56x56)__<br>
 Epoch: 2000<br>
-<img src='https://user-images.githubusercontent.com/21985915/36361988-a320d7e0-156b-11e8-961f-13719a3c1088.png' width="200">
-
+<img src='https://user-images.githubusercontent.com/21985915/36361988-a320d7e0-156b-11e8-961f-13719a3c1088.png' width="200"><br>
 Epoch: 2500<br>
-<img src='https://user-images.githubusercontent.com/21985915/36361989-a351681a-156b-11e8-9220-c514a66e1b1d.png' width="200">
-
+<img src='https://user-images.githubusercontent.com/21985915/36361989-a351681a-156b-11e8-9220-c514a66e1b1d.png' width="200"><br>
 Epoch: 3000<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361990-a3885618-156b-11e8-9975-dc16a7ca323a.png' width="200">
-
 ## Future Improvements
 
 Great - you've managed to generate images using GANs!! Now what?
