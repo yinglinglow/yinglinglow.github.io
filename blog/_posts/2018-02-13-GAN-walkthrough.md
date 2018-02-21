@@ -16,6 +16,8 @@ __Part 1 - GANs in general__<br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#obtaining-dataset'>Obtaining Dataset</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#cleaning-dataset'>Cleaning Dataset</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#modelling'>Modelling</a><br>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#set-up-cloud-platform'>Set up Cloud Platform</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#running-the-model'>Running the Model</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#results'>Results</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#future-improvements'>Future Improvements</a><br>
@@ -54,7 +56,7 @@ Similarly for GANs:
 
 If a model does the right thing (make real images or gives correct labelling), the competing model learns about it and improves its competing techniques, making life more difficult for itself subsequently (hence, -10). If a model lies but the competing model does the right thing, it 'wins' because it gathers more information about the competing model, without revealing any information about itself (hence, 20). If both lie, neither learns anything about each other (hence, 0). By the concept of the Nash equilibrium, it predicts that both models should try their best to make real images/give the correct labelling always, and at the equilibrium, the generator network is able to produce real looking images perfectly, and the discriminator network cannot distinguish the real images from the fake images.
 
-We will see later that there are limitations to this, but let's take this for now. In fact, since the introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model. You will be amazed at how fast people innovate - we can even generate images from text now!! Imagine reading a Harry Potter book and images generating as you go along...
+We will see later that there are limitations to this (see [here](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html#hard-to-achieve-nash-equilibrium) for more!), but let's take this for now. In fact, since the introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model. You will be amazed at how fast people innovate - we can even generate images from text now!! Imagine reading a Harry Potter book and images generating as you go along...
 
 <pre>
 <b>Generating new Pokemons:</b><br>
