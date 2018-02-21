@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "This should be in the random news section"
+title: "Testing123"
 date: 2018-02-17
 ---
 
 
-Actually just testing in progress lol
+Sorry to disappoint - this is just a test post! Come back another time please? :)
