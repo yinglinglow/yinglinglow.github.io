@@ -97,40 +97,44 @@ Zooming into the Generator model (which produces the fake image) - specifically,
 <small>For those interested, Adit did a [fantastic writeup here](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/) explaining in detail the workings of CNNs.</small>
 
 <pre>
-<table style="width:100%">
-  <tr>
-    <td><b>Transposed convolution</b></td>
-  </tr>
-  <tr>
-    <td>No padding, no strides, transposed</td> 
-    <td>No padding, strides, transposed</td> 
-    <td>Padding, strides, transposed</td>
-  </tr>
-  <tr>
-    <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif"></td>
-    <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif"></td>
-    <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif"></td>
-  </tr>
-</table>
-<small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
+
+  <table style="width:100%">
+    <tr>
+      <td><b>Transposed convolution</b></td>
+    </tr>
+    <tr>
+      <td>No padding, no strides, transposed</td> 
+      <td>No padding, strides, transposed</td> 
+      <td>Padding, strides, transposed</td>
+    </tr>
+    <tr>
+      <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368254-5d7d38d4-1591-11e8-9850-5db58dcf21e8.gif"></td>
+      <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368255-5dae0c98-1591-11e8-8c04-69b0ac63f68b.gif"></td>
+      <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif"></td>
+    </tr>
+  </table>
+  <small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
 
-<img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
-<br>
-<small><i>Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e</i></small>
+  <img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
+  <br>
+  <small><i>Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e</i></small>
+  
 </pre>
 
 __Discriminator architecture__<br>
 For the discriminator, it takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The convolution gif belows shows how the original number of values (in blue) is reduced (green). Eventually it returns a binary output, classifying the image as real or fake.
 
 <pre>
-<b>Convolution<b><br>
-<img height="70" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
-<small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
+
+  <b>Convolution<b><br>
+  <img height="70" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
+  <small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
 
-<img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'><br>
-<small><i>Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1</i></small>
+  <img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'><br>
+  <small><i>Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1</i></small>
+
 </pre>
 
 ## Types of GAN
