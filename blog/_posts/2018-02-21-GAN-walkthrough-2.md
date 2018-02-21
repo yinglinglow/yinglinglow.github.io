@@ -30,7 +30,7 @@ If you have had experience with other machine algorithms before, you might think
 
 __Scrape 2,000 logos from Google Images__
 
-Hardik Vasa has written a very useful script to scrap images from Google, and you can find the script here:[https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download). Use various keywords such as _'logo'_, _'logo circle'_, _'logo simple'_, _'logo vector'_, etc to scrap different logos until you reach around 2000 images, and save them in a folder. 
+Hardik Vasa has written a very useful script to scrap images from Google, and you can find the script here: [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download). Use various keywords such as _'logo'_, _'logo circle'_, _'logo simple'_, _'logo vector'_, etc to scrap different logos until you reach around 2000 images, and save them in a folder. 
 
 Be sure to look through your logos manually and ensure that they are of good quality; as much as possible, choose logos which are clean and simple (not many complicated lines or words, or designs), and have a white background. Don't worry too much about white space around the logo as we will be center-cropping those out later using a script. If you have an image with multiple logos arranged in a grid and need to split them into individual photos, use this script below:
 
@@ -54,7 +54,7 @@ scrapy runspider 1_1_wikispider.py -o items.csv -t csv
 python3 1_2_downloading_wiki_pics.py --filename=items.csv --local=True
 ```
 
-<img width="400" src="https://user-images.githubusercontent.com/21985915/36363186-dd9d4e80-1575-11e8-98d5-aa797107ee4c.png">
+<img width="300" src="https://user-images.githubusercontent.com/21985915/36363186-dd9d4e80-1575-11e8-98d5-aa797107ee4c.png">
 
 
 - Download 800 logos from [Font Awesome](https://fontawesome.com/) (black and white logos). You will need to unzip and navigate into the folder 'advanced-options', and 'raw-svg'. This folder contains all the svg files (svg file types, unlike jpeg and png, means that the images are stored as vectors instead of pixels). To convert them into png files, use:
@@ -70,6 +70,8 @@ python3 1_4_convert_svg_png.py --path=/Users/xxx/svgtopng/
 
 Now that we have our dataset, let's clean it up which entails center-cropping and resizing them and converting them into one big array. In this case, we'll go with 56x56 (the model infrastructure is optimised for 56 x 56). It is possible to run on 28x28 (half the size) instead which will make the model will run faster(!!!) - however the quality of the output images will be lower. It is also possible to run on 112x112 (double the size) which will take a longer time for the model to run (gulps), but the quality of the output is (slightly) higher (whoppee!). Choose your poison:
 
+<style="border:1px solid #000000;">
+
  | Runtime
  ---|---
 28x28 | ~3-5 hours (5000 epochs)
@@ -78,6 +80,7 @@ Now that we have our dataset, let's clean it up which entails center-cropping an
  ---|---
 112x112 | ~24 hours (3000 epochs)
 
+</style>
 
 Subsequently, if your array size is less than 100MB, you can upload it to github together with the scripts (so that when you do a git clone you pull all your scripts and data in, all at once)! This is likely the case if you are dealing with less than 2000 images of size 28x28 or 56x56.
 
@@ -107,9 +110,9 @@ Honestly, I chose these two above because they are Keras code using a Tensorflow
 For guys who want to run the images on a smaller or bigger image sizes, honestly the quick hack is just to remove/add a chunk of this code in the Generator, which basically just halves/doubles the size of the final output:
 
 ```python
-    model.add(Conv2DTranspose(f2, conv_window, strides=stride, padding='same'))
-    model.add(BatchNormalization())
-    model.add(LeakyReLU())
+model.add(Conv2DTranspose(f2, conv_window, strides=stride, padding='same'))
+model.add(BatchNormalization())
+model.add(LeakyReLU())
 ```
 
 Things become more complicated if you want to run on a black and white dataset instead (because mine is configured for RGB), but essentially because black and white images are just 1 channel (instead of 3), and hence instead of having an array shape of [num_of_images, 56, 56, 3], should have an array shape of [num_of_images, 56, 56]. For that I gotta admit, you have to change it yourself, OR just use their original code lol.
@@ -183,14 +186,14 @@ aws s3 cp gan_models/* s3://yourbucketname/
 __To save files to your local computer__<br>
 Run the below commands from your LOCAL terminal!!
 
-<pre>
-<b>For AWS:</b><br>
+```bash
+# for AWS
 scp -i yourpemfile.pem -r ubuntu@ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com:~/gan_walkthrough/gan/* .<br>
 scp -i yourpemfile.pem -r ubuntu@ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com:~/gan_walkthrough/gan_models/* .
 
-<b>For GCP:</b><br>
+# for GCP
 gcloud compute scp yourinstancename:gan_walkthrough/gan/* .
-</pre>
+```
 
 ## Results
 
