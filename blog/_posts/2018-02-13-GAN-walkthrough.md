@@ -35,23 +35,25 @@ This adversarial type of modelling is not so foreign to us - recall the Nash equ
 
 Similarly for GANs:
 <pre>
-<table style="border:1; overflow: auto;">
-  <tr>
-    <td></td>
-    <td align="center"><b>Confess (Make real looking images)</b></td>
-    <td align="center"><b>Lie (Make fake looking images)</b></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Confess (Give correct labelling)</b></td> 
-    <td align="center">(-10, -10)</td> 
-    <td align="center">(-10, 20)</td>
-  </tr>
-  <tr>
-    <td align="center"><b>Lie (Give wrong labelling)</b></td>
-    <td align="center">(20, -10)</td>
-    <td align="center">(0, 0)</td>
-  </tr>
-</table>
+<div class="table-responsive">
+  <table style="border:1;" class="table">
+    <tr>
+      <td></td>
+      <td align="center"><b>Confess (Make real looking images)</b></td>
+      <td align="center"><b>Lie (Make fake looking images)</b></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Confess (Give correct labelling)</b></td> 
+      <td align="center">(-10, -10)</td> 
+      <td align="center">(-10, 20)</td>
+    </tr>
+    <tr>
+      <td align="center"><b>Lie (Give wrong labelling)</b></td>
+      <td align="center">(20, -10)</td>
+      <td align="center">(0, 0)</td>
+    </tr>
+  </table>
+</div>
 </pre>
 
 If a model does the right thing (make real images or gives correct labelling), the competing model learns about it and improves its competing techniques, making life more difficult for itself subsequently (hence, -10). If a model lies but the competing model does the right thing, it 'wins' because it gathers more information about the competing model, without revealing any information about itself (hence, 20). If both lie, neither learns anything about each other (hence, 0). By the concept of the Nash equilibrium, it predicts that both models should try their best to make real images/give the correct labelling always, and at the equilibrium, the generator network is able to produce real looking images perfectly, and the discriminator network cannot distinguish the real images from the fake images.
