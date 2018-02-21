@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "A GAN walkthrough (DCGAN and WGAN) - Part 2"
+title: "A Beginner's Guide To GAN (Generative Adversarial Network) - Part 2"
 date: 2018-02-20
 ---
 
 
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough'>__Part 1 - GANs in general__</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#introduction'>Introduction</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#overview'>Overview</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#general-model-structure'>General Model Structure</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/13/GAN-walkthrough#types-of-gan'>Types of GAN</a>
 
@@ -17,9 +16,8 @@ __Part 2 - GAN Walkthrough__<br>
 <a href='#set-up-cloud-platform'>Set up Cloud Platform</a><br>
 <a href='#running-the-model'>Running the Model</a><br>
 <a href='#results'>Results</a><br>
-<a href='#future-improvements'>Future Improvements</a>
+<a href='#future-improvements'>Future Improvements</a><br>
 
-# GAN Walkthrough
 ## Obtaining Dataset
 
 There are 3 different ways to obtain your starting images - I recommend method 2 (scraping from Google Images).

@@ -18,10 +18,9 @@ __Part 1 - GANs in general__<br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#cleaning-dataset'>Cleaning Dataset</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#running-the-model'>Running the Model</a><br>
 <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#results'>Results</a><br>
-<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#future-improvements'>Future Improvements</a>
+<a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2#future-improvements'>Future Improvements</a><br>
 
 
-# GANs in general
 ## Introduction
 
 Before GANs, how did we generate new images? Apart from picking up a pencil and drawing them ourselves, we attempted to teach machines to generate new images by showing them many many MANY images, looking at their results and telling them what is right, and what is wrong. Machines learn differently from humans - say a child could learn to identify an apple after he is shown an apple picture 5 times, but a machine needs upwards of 10,000 images (or more!) to learn to identify an apple! Imagine being a teacher to a machine... pretty painful. Also unfortunately (or fortunately?), there is only so much labelled data and human effort we can dedicate to teaching the machines. 
