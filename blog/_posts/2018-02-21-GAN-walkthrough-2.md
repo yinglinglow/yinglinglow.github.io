@@ -201,7 +201,7 @@ Here's a sneak peek for you... the results!!
 
 __1) DCGAN (56x56)__<br>
 Epoch: 3000 <br>
-<img src='https://user-images.githubusercontent.com/21985915/36361986-a2bd0bac-156b-11e8-9d07-fb39dc348440.png' width="200">
+<img src='https://user-images.githubusercontent.com/21985915/36361986-a2bd0bac-156b-11e8-9d07-fb39dc348440.png' width="200"><br>
 
 __2) WGAN-GP (56x56)__<br>
 Epoch: 2000<br>
