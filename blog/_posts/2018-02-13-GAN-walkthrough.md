@@ -34,12 +34,23 @@ This adversarial type of modelling is not so foreign to us - recall the Nash equ
 
 Similarly for GANs:
 <pre>
-
- . | **Confess (Make real looking images)** | **Lie (Make fake looking images)**
---- | --- | ---
-**Confess (Give correct labelling)**| (-10,-10)| (-10,20)
-**Lie (Give wrong labelling)**| (20,-10)| (0,0) |
-
+<table style="width:100%">
+  <tr>
+    <td></td>
+    <td align="center"><b>Confess (Make real looking images)</b></td>
+    <td align="center"><b>Lie (Make fake looking images)</b></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Confess (Give correct labelling)</b></td> 
+    <td align="center">(-10, -10)</td> 
+    <td align="center">(-10, 20)</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Lie (Give wrong labelling)</b></td>
+    <td align="center">(20, -10)</td>
+    <td align="center">(0, 0)</td>
+  </tr>
+</table>
 </pre>
 
 If a model does the right thing (make real images or gives correct labelling), the competing model learns about it and improves its competing techniques, making life more difficult for itself subsequently (hence, -10). If a model lies but the competing model does the right thing, it 'wins' because it gathers more information about the competing model, without revealing any information about itself (hence, 20). If both lie, neither learns anything about each other (hence, 0). By the concept of the Nash equilibrium, it predicts that both models should try their best to make real images/give the correct labelling always, and at the equilibrium, the generator network is able to produce real looking images perfectly, and the discriminator network cannot distinguish the real images from the fake images.
@@ -47,19 +58,16 @@ If a model does the right thing (make real images or gives correct labelling), t
 We will see later that there are limitations to this, but let's take this for now. In fact, since the introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model. You will be amazed at how fast people innovate - we can even generate images from text now!! Imagine reading a Harry Potter book and images generating as you go along...
 
 <pre>
-<b>Generating new Pokemons:</b><br><br>
-<img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png">
-<br>
+<b>Generating new Pokemons:</b><br>
+<img width="500" alt="pokemon-gan" src="https://user-images.githubusercontent.com/21985915/36364048-ba6e05d8-157c-11e8-91ee-87a25c60eb14.png"><br>
 <small><i>Credits: https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html</i></small>
 
-<b>Generating fake bedrooms:</b><br><br>
-<img width="500" alt="bedroom" src="https://user-images.githubusercontent.com/21985915/36432837-21398386-1696-11e8-9dc7-f9bbb53e6ae6.png">
-<br>
+<b>Generating fake bedrooms:</b><br>
+<img width="500" alt="bedroom" src="https://user-images.githubusercontent.com/21985915/36432837-21398386-1696-11e8-9dc7-f9bbb53e6ae6.png"><br>
 <small><i>Credits:https://arxiv.org/abs/1511.06434v2</i></small>
 
-<b>Generating flowers from text:</b><br><br>
-<img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png">
-<br>
+<b>Generating flowers from text:</b><br>
+<img width="500" alt="text-flower" src="https://user-images.githubusercontent.com/21985915/36364285-201dad42-157e-11e8-8bc3-0cb98ff84594.png"><br>
 <small><i>Credits: Generative Adversarial Text to Image Synthesis (Scott Reed et al 2016), https://arxiv.org/pdf/1605.05396.pdf</i></small>
 </pre>
 
@@ -68,8 +76,7 @@ We will see later that there are limitations to this, but let's take this for no
 Let's look at the general structure of a GAN from a more practical perspective. In a GAN, two models are trained at the same time.One model is the __Generator__: it takes random noise as input and produces fake images. The second model is the __Discriminator__: it takes both real images and fake images (created by the Generator) as input, and has to figure out how to identify which are real images and which are fake.
 
 <pre>
-<img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg">
-<br>
+<img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg"><br>
 <small><i>Credits: Chris Olah, https://twitter.com/ch402/status/793911806494261248/photo/1</i></small>
 </pre>
 
@@ -102,26 +109,25 @@ Zooming into the Generator model (which produces the fake image) - specifically,
     <td align="center"><img height="100" src="https://user-images.githubusercontent.com/21985915/36368257-5de348d6-1591-11e8-8fb7-ad6d6348c44b.gif"></td>
   </tr>
 </table>
-<small>_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_</small>
+<small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
 
 <img width="500" src='https://user-images.githubusercontent.com/21985915/36368270-6860664a-1591-11e8-969d-d500396dca84.png'>
 <br>
-<small>_Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e_</small>
+<small><i>Credits: https://towardsdatascience.com/gans-part2-dcgans-deep-convolution-gans-for-generating-images-c5d3c7c3510e</i></small>
 </pre>
 
 __Discriminator architecture__<br>
 For the discriminator, it takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The convolution gif belows shows how the original number of values (in blue) is reduced (green). Eventually it returns a binary output, classifying the image as real or fake.
 
 <pre>
-__Convolution__<br>
+<b>Convolution<b><br>
 <img height="70" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
-_Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic_
+<small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
 
-<img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'>
-<br>
-_Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1_
+<img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'><br>
+<small><i>Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1</i></small>
 </pre>
 
 ## Types of GAN
@@ -139,7 +145,7 @@ There are many different varieties of GAN - you can refer [here](https://github.
   __cGAN (Conditional GAN):__<br> 
   This GAN is interesting, it gets by with a little bit of help - it takes in conditional information that describes some aspect of the data (aka labeled points for eyes, nose for a face). So we are giving our GANs a little help here, if you will.
     
-  __WGAN (Wasserstein GAN):__ 
+  __WGAN (Wasserstein GAN):__<br> 
   Remember the original GAN just looks at the difference between the real data distribution and the generated data distribution? There's a caveat - if the true and fake distributions do not overlap, the feedback given is just 0 or infinity. How can the Discriminator or Generator learn effectively in that case? The feedback is not useful as to how they should change. That's part of the reason why GANs are so difficult to train. Enter the Wasserstein-1 distance (Earth-Mover distance) - basically in this case, even if the two distributions have no overlap, at least it describes how far apart they are so that they can learn (instead of just returning 0 or infinity!)
 
 
@@ -154,4 +160,4 @@ In mathematical terms, for the approximation of the Wasserstein (Earth-Mover) di
 Hence, instead of clipping weights as in WGAN, WGAN-GP penalises the norm of gradient of the discriminator with respect to its input. In human terms, this means that the bigger your gradient norm (maximum rate of change), the more you will be penalised. It incentivises the model towards the threshold (remember (-1,1)?) so that WGAN remains valid.
 
 
-Whew! You made it through all that - well done. Let's get down to business now (finally!) and head over to <a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!
+WHEW! You made it through all that - well done!! Let's get down to business now (finally!) and head over to <br><a href='https://www.yinglinglow.com/blog/2018/02/20/GAN-walkthrough-2'>__Part 2 - GAN Walkthrough__</a>, where we go through the actual steps of running your very own GAN!
