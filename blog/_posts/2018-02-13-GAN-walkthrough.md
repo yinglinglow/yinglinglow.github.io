@@ -35,7 +35,7 @@ This adversarial type of modelling is not so foreign to us - recall the Nash equ
 
 Similarly for GANs:
 <pre>
-<table style="width:100%">
+<table style="border:1;">
   <tr>
     <td></td>
     <td align="center"><b>Confess (Make real looking images)</b></td>

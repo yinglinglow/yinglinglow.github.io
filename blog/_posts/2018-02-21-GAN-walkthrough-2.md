@@ -72,11 +72,11 @@ Now that we have our dataset, let's clean it up which entails center-cropping an
 
  | Runtime
  ---|---
-28x28 | ~3-5 hours
+28x28 | ~3-5 hours (5000 epochs)
  ---|---
-56x56 | ~15 hours
+56x56 | ~15 hours (3000 epochs)
  ---|---
-112x112 | ~24 hours
+112x112 | ~24 hours (3000 epochs)
 
 
 Subsequently, if your array size is less than 100MB, you can upload it to github together with the scripts (so that when you do a git clone you pull all your scripts and data in, all at once)! This is likely the case if you are dealing with less than 2000 images of size 28x28 or 56x56.
@@ -119,20 +119,43 @@ __(if you do not have a GPU)__
 
 Let's set up the environment to run our scripts in - this requires a GPU! If you don't have one (like me) - let's get this up on AWS (Amazon Web Services) or GCP (Google Cloud Platform). I personally prefer AWS (which is also used in many more companies), but GCP gives $300 free credits (see [here](https://cloud.google.com/free/docs/frequently-asked-questions) - caveat is that to use GPU you need to pay $35 dollars in advance which is returned in credits!). Check out Microsoft Azure or even Alibabacloud - I think I heard about free credits from Alibabacloud too (see [here](https://www.alibabacloud.com/campaign/free-trial))!
 
+Can I also say that I am working on this, BUT if you want to run WGAN, it only seems to work on the AWS environment for now :( I am going to try to work things out in Docker, but for the time being I would recommend:
 
+1) Try DCGAN on GCP
+2) Try WGAN on AWS
 
+__For AWS__
+Set up your EC2 instance using the ami 'ami-ccba4ab4' by Adrian Rosebrock on:
+[https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/](https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/)
 
-
-Use `setup-aws.sh` for AWS EC2, or `setup-gcp.sh` for Google Cloud Platform.
-*In progress - DCGAN works fine on GCP but WGAN has some issues, potentially due to installation problems :(
-
-
-
-Use `run-model.sh` to run the model. 
-Change the variables accordingly to whichever model or XTRAIN set you are using.
-
+Then, install AWSCLI and pandas. We are ready!!
 
 ```bash
+pip3 install awscli
+pip3 install pandas
+```
+
+__For GCP__
+Set up your gcloud compute instance using this:[https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43](https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43)
+
+Then, install AWSCLI and Keras. We are ready!!
+
+```bash
+conda install -c anaconda keras-gpu
+conda install -c conda-forge awscli
+```
+
+## Running the Model
+
+We git clone and pull everything in (also copy from AWS your XTRAIN if it isn't in your github repo!)
+`tmux` basically enables your model to continue running even if you close your terminal window. To re-connect to it, reopen your terminal window and ssh in to your instance as per normal. Then, enter `tmux attach` and you should see your model still running. For more details, see [here](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session).
+
+the variables are just set in the environment (just makes it easier to change and run a different model or XTRAIN set) - so just change it to the names of the files you want to run. Date is just used in saved filenames.
+
+BY THE WAY - I set the number of epochs to be 10,000 by default. Looking at my past loss plots, I gather that around 3000 or 5000 epochs is a good place to stop, so I force quit the training after I view the results and deem it sufficient.
+
+```bash
+# git clone everything in
 git clone https://github.com/yinglinglow/gan_walkthrough.git
 cd gan_walkthrough
 mkdir gan
@@ -142,47 +165,58 @@ mkdir gan_models
 tmux
 
 # change your variables accordingly if necessary
-export XTRAIN=X_train_56_1700.pkl
-export CODE=WGAN_180218_11am
-export DATE=180218
+export XTRAIN=X_train_56_1366.pkl
+export CODE=WGAN_180218_final
+export DATE=210218
 
 # run the model
 python3 $CODE.py
 ```
 
+Exciting stuff!!! You've got your model running and the results are OUT!!! CONGRATULATIONS!!!! <br>
+Wait, wait, hang on a minute - where ARE the results? As it happens, it's saved in the directory `gan` and the models are saved in `gan_models`.
+
+__To save to AWS S3 directly__<br>
+aws s3 cp gan/* s3://yourbucketname/<br>
+aws s3 cp gan_models/* s3://yourbucketname/
+
+__To save files to your local computer__<br>
+Run the below commands from your LOCAL terminal!!
+
+<pre>
+<b>For AWS:</b><br>
+scp -i yourpemfile.pem -r ubuntu@ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com:~/gan_walkthrough/gan/* .<br>
+scp -i yourpemfile.pem -r ubuntu@ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com:~/gan_walkthrough/gan_models/* .
+
+<b>For GCP:</b><br>
+gcloud compute scp yourinstancename:gan_walkthrough/gan/* .
+</pre>
 
 ## Results
 
-__1) DCGAN__
+Here's a sneak peek for you... the results!!
 
-<br><br>
-Epoch: 3000
-
+__1) DCGAN (56x56)__<br>
+Epoch: 3000 <br>
 <img src='https://user-images.githubusercontent.com/21985915/36361986-a2bd0bac-156b-11e8-9d07-fb39dc348440.png' width="200">
 
-<br><br>
-
-__2) WGAN-GP__
-
-<br><br>
-Epoch: 2000
-
+__2) WGAN-GP (56x56)__<br>
+Epoch: 2000<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361988-a320d7e0-156b-11e8-961f-13719a3c1088.png' width="200">
 
-
-Epoch: 2500
-
+Epoch: 2500<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361989-a351681a-156b-11e8-9220-c514a66e1b1d.png' width="200">
 
-
-Epoch: 3000
-
+Epoch: 3000<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361990-a3885618-156b-11e8-9975-dc16a7ca323a.png' width="200">
-
 
 ## Future Improvements
 
-Other models to attempt: 
-- Variational Autoencoders
-- Generative Latent Optimization (GLO)
-- Creative Adversarial Network (CAN)
+Great - you've managed to generate images using GANs!! Now what?
+
+There are many other interesting things out there to try out - let me pique your interest a litte:
+- [Variational Autoencoders](http://kvfrans.com/variational-autoencoders-explained/)
+- [Generative Latent Optimization (GLO)](https://arxiv.org/abs/1707.05776)
+- [Creative Adversarial Network (CAN)](https://arxiv.org/abs/1706.07068)
+
+I'll leave you to it then... until the next time, adios!
