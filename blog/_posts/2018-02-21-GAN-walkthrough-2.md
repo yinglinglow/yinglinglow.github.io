@@ -70,17 +70,20 @@ python3 1_4_convert_svg_png.py --path=/Users/xxx/svgtopng/
 
 Now that we have our dataset, let's clean it up which entails center-cropping and resizing them and converting them into one big array. In this case, we'll go with 56x56 (the model infrastructure is optimised for 56 x 56). It is possible to run on 28x28 (half the size) instead which will make the model will run faster(!!!) - however the quality of the output images will be lower. It is also possible to run on 112x112 (double the size) which will take a longer time for the model to run (gulps), but the quality of the output is (slightly) higher (whoppee!). Choose your poison:
 
-<style="border:1px solid #000000;">
-
- | Runtime
- ---|---
-28x28 | ~3-5 hours (5000 epochs)
- ---|---
-56x56 | ~15 hours (3000 epochs)
- ---|---
-112x112 | ~24 hours (3000 epochs)
-
-</style>
+<table style="border:1px solid #000000;">
+    <tr>
+      <td></td>
+      <td align="center"><b>Runtime</b></td>
+    </tr>
+    <tr>
+      <td align="center">28x28</td> 
+      <td align="center">~3-5 hours (5000 epochs)</td> 
+    </tr>
+    <tr>
+      <td align="center">112x112</td> 
+      <td align="center">~24 hours (3000 epochs)</td> 
+    </tr>
+</table>
 
 Subsequently, if your array size is less than 100MB, you can upload it to github together with the scripts (so that when you do a git clone you pull all your scripts and data in, all at once)! This is likely the case if you are dealing with less than 2000 images of size 28x28 or 56x56.
 
