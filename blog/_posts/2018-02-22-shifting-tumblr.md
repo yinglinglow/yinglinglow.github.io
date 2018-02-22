@@ -12,4 +12,6 @@ for anyone considering to move from tumblr to jekyll, this gets ALL your posts i
 
 amazing stuff. you do need ruby and `sudo gem install jekyll-import` though
 
-love it
+love it.
+
+if you ever get an error, remember to check your URL - there shouldn't be a '/' at the end!
