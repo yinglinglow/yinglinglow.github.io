@@ -75,15 +75,19 @@ Now that we have our dataset, let's clean it up which entails center-cropping an
   <table style="table">
       <tr>
         <td></td>
-        <td align="center"><b>Runtime</b></td>
+        <td align="center"><b>Runtime (using AWS p2x.large)</b></td>
       </tr>
       <tr>
         <td align="center">28x28</td> 
-        <td align="center">~3-5 hours (5000 epochs)</td> 
+        <td align="center">~5 hours (5000 epochs)</td> 
+      </tr>
+      <tr>
+        <td align="center">56x56</td> 
+        <td align="center">~15 hours (3000 epochs)</td> 
       </tr>
       <tr>
         <td align="center">112x112</td> 
-        <td align="center">~24 hours (3000 epochs)</td> 
+        <td align="center">~30 hours (3000 epochs)</td> 
       </tr>
   </table>
 </div>
@@ -135,7 +139,7 @@ Can I also say that I am working on this, BUT if you want to run WGAN, it only s
 2) Try WGAN on AWS
 
 __For AWS__<br>
-Set up your EC2 instance using the ami 'ami-ccba4ab4' by Adrian Rosebrock on: 
+Set up your EC2 (p2x.large) instance using the ami 'ami-ccba4ab4' by Adrian Rosebrock on: 
 [https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/](https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/)
 
 Then, install AWSCLI and pandas. We are ready!!
