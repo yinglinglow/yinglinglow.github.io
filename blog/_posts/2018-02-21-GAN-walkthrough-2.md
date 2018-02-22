@@ -69,7 +69,6 @@ python3 1_4_convert_svg_png.py --path=/Users/xxx/svgtopng/
 ## Cleaning Dataset
 
 Now that we have our dataset, let's clean it up which entails center-cropping and resizing them and converting them into one big array. In this case, we'll go with 56x56 (the model infrastructure is optimised for 56 x 56). It is possible to run on 28x28 (half the size) instead which will make the model will run faster(!!!) - however the quality of the output images will be lower. It is also possible to run on 112x112 (double the size) which will take a longer time for the model to run (gulps), but the quality of the output is (slightly) higher (whoppee!). Choose your poison:
-
 <pre>
 <div class="table-responsive">
   <table style="table">
@@ -91,7 +90,6 @@ Now that we have our dataset, let's clean it up which entails center-cropping an
   </table>
 </div>
 </pre>
-
 Subsequently, if your array size is less than 100MB, you can upload it to github together with the scripts (so that when you do a git clone you pull all your scripts and data in, all at once)! This is likely the case if you are dealing with less than 2000 images of size 28x28 or 56x56.
 
 Else, I would recommend to upload it to AWS S3 using the AWS CLI - remember to upload it to the same region as where you are spinning your instance up in! If you're following mine below later, set it up in Oregon (even though my human self is based here in Singapore :'( )
