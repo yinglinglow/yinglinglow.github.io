@@ -219,7 +219,6 @@ Epoch: 2000<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361988-a320d7e0-156b-11e8-961f-13719a3c1088.png' width="200"><br>
 Epoch: 2500<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361989-a351681a-156b-11e8-9220-c514a66e1b1d.png' width="200"><br>
-
 __3) WGAN-GP (112x112)__<br>
 Epoch: 2500<br>
 <img src='https://user-images.githubusercontent.com/21985915/36516668-1fc93008-17ba-11e8-8c44-7a66ebf8cbd5.png' width="200">
