@@ -74,7 +74,6 @@ Now that we have our dataset, let's clean it up which entails center-cropping an
 <div class="table-responsive">
   <table style="table">
       <tr>
-        <td></td>
         <td align="center"><b>Runtime (using AWS p2x.large)</b></td>
       </tr>
       <tr>
