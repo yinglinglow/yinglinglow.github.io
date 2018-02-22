@@ -223,7 +223,9 @@ Epoch: 2500<br>
 
 Great - you've managed to generate images using GANs!! Now what?
 
-There are many other interesting things out there to try out - let me pique your interest a litte:
+You can continue to tune to make the logos even more real! The last 20% is always the most difficult... gulps.
+
+Alternatively, there are many other models out there to explore. Will they give better results? Perhaps, a combination of models? Let me pique your interest a litte:
 - [Variational Autoencoders](http://kvfrans.com/variational-autoencoders-explained/)
 - [Generative Latent Optimization (GLO)](https://arxiv.org/abs/1707.05776)
 - [Creative Adversarial Network (CAN)](https://arxiv.org/abs/1706.07068)
