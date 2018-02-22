@@ -162,7 +162,7 @@ We git clone and pull everything in (also copy from AWS your XTRAIN if it isn't 
 
 the variables are just set in the environment (just makes it easier to change and run a different model or XTRAIN set) - so just change it to the names of the files you want to run. Date is just used in saved filenames.
 
-BY THE WAY - I set the number of epochs to be 10,000 by default. Looking at my past loss plots, I gather that around 3000 or 5000 epochs is a good place to stop, so I force quit the training after I view the results and deem it sufficient.
+BY THE WAY - I set the number of epochs to be 10,000 by default. Looking at my past loss plots, I gather that around 3000 or 5000 epochs is a good place to stop, so I force quit the training after I view the results and deem it sufficient. What is a good place to stop? When the losses stop decreasing (ideally it should tend towards 0). [Here](https://myurasov.github.io/2017/09/24/wasserstein-gan-keras.html) is a nice illustration, unforuntately my loss plots are not as pretty... something to improve on!
 
 ```bash
 # git clone everything in
@@ -215,8 +215,10 @@ Epoch: 2000<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361988-a320d7e0-156b-11e8-961f-13719a3c1088.png' width="200"><br>
 Epoch: 2500<br>
 <img src='https://user-images.githubusercontent.com/21985915/36361989-a351681a-156b-11e8-9220-c514a66e1b1d.png' width="200"><br>
-Epoch: 3000<br>
-<img src='https://user-images.githubusercontent.com/21985915/36361990-a3885618-156b-11e8-9975-dc16a7ca323a.png' width="200">
+
+__3) WGAN-GP (112x112)__<br>
+Epoch: 2500<br>
+<img src='https://user-images.githubusercontent.com/21985915/36516668-1fc93008-17ba-11e8-8c44-7a66ebf8cbd5.png' width="200">
 ## Future Improvements
 
 Great - you've managed to generate images using GANs!! Now what?
