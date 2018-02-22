@@ -54,7 +54,7 @@ scrapy runspider 1_1_wikispider.py -o items.csv -t csv
 python3 1_2_downloading_wiki_pics.py --filename=items.csv --local=True
 ```
 
-<img width="300" src="https://user-images.githubusercontent.com/21985915/36363186-dd9d4e80-1575-11e8-98d5-aa797107ee4c.png">
+<img width="400" src="https://user-images.githubusercontent.com/21985915/36363186-dd9d4e80-1575-11e8-98d5-aa797107ee4c.png">
 
 
 - Download 800 logos from [Font Awesome](https://fontawesome.com/) (black and white logos). You will need to unzip and navigate into the folder 'advanced-options', and 'raw-svg'. This folder contains all the svg files (svg file types, unlike jpeg and png, means that the images are stored as vectors instead of pixels). To convert them into png files, use:
@@ -63,27 +63,31 @@ python3 1_2_downloading_wiki_pics.py --filename=items.csv --local=True
 python3 1_4_convert_svg_png.py --path=/Users/xxx/svgtopng/
 ```
 
-<img width="400" src="https://user-images.githubusercontent.com/21985915/36363188-e31f908e-1575-11e8-9612-1b87209f1a81.png">
+<img width="330" src="https://user-images.githubusercontent.com/21985915/36363188-e31f908e-1575-11e8-9612-1b87209f1a81.png">
 
 
 ## Cleaning Dataset
 
 Now that we have our dataset, let's clean it up which entails center-cropping and resizing them and converting them into one big array. In this case, we'll go with 56x56 (the model infrastructure is optimised for 56 x 56). It is possible to run on 28x28 (half the size) instead which will make the model will run faster(!!!) - however the quality of the output images will be lower. It is also possible to run on 112x112 (double the size) which will take a longer time for the model to run (gulps), but the quality of the output is (slightly) higher (whoppee!). Choose your poison:
 
-<table style="border:1px solid #000000;">
-    <tr>
-      <td></td>
-      <td align="center"><b>Runtime</b></td>
-    </tr>
-    <tr>
-      <td align="center">28x28</td> 
-      <td align="center">~3-5 hours (5000 epochs)</td> 
-    </tr>
-    <tr>
-      <td align="center">112x112</td> 
-      <td align="center">~24 hours (3000 epochs)</td> 
-    </tr>
-</table>
+<pre>
+<div class="table-responsive">
+  <table style="table">
+      <tr>
+        <td></td>
+        <td align="center"><b>Runtime</b></td>
+      </tr>
+      <tr>
+        <td align="center">28x28</td> 
+        <td align="center">~3-5 hours (5000 epochs)</td> 
+      </tr>
+      <tr>
+        <td align="center">112x112</td> 
+        <td align="center">~24 hours (3000 epochs)</td> 
+      </tr>
+  </table>
+</div>
+</pre>
 
 Subsequently, if your array size is less than 100MB, you can upload it to github together with the scripts (so that when you do a git clone you pull all your scripts and data in, all at once)! This is likely the case if you are dealing with less than 2000 images of size 28x28 or 56x56.
 
@@ -130,8 +134,8 @@ Can I also say that I am working on this, BUT if you want to run WGAN, it only s
 1) Try DCGAN on GCP
 2) Try WGAN on AWS
 
-__For AWS__
-Set up your EC2 instance using the ami 'ami-ccba4ab4' by Adrian Rosebrock on:
+__For AWS__<br>
+Set up your EC2 instance using the ami 'ami-ccba4ab4' by Adrian Rosebrock on: 
 [https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/](https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/)
 
 Then, install AWSCLI and pandas. We are ready!!
@@ -141,8 +145,8 @@ pip3 install awscli
 pip3 install pandas
 ```
 
-__For GCP__
-Set up your gcloud compute instance using this:[https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43](https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43)
+__For GCP__<br>
+Set up your gcloud compute instance using this: [https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43](https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43)
 
 Then, install AWSCLI and Keras. We are ready!!
 
@@ -204,7 +208,7 @@ Here's a sneak peek for you... the results!!
 
 __1) DCGAN (56x56)__<br>
 Epoch: 3000 <br>
-<img src='https://user-images.githubusercontent.com/21985915/36361986-a2bd0bac-156b-11e8-9d07-fb39dc348440.png' width="200"><br>
+<img src='https://user-images.githubusercontent.com/21985915/36361986-a2bd0bac-156b-11e8-9d07-fb39dc348440.png' width="200"><br><br>
 
 __2) WGAN-GP (56x56)__<br>
 Epoch: 2000<br>

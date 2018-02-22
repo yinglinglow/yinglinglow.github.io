@@ -127,7 +127,7 @@ For the discriminator, it takes in an image (either real or fake), passes the im
 
 
 <b>Convolution<b><br>
-<img height="70" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
+<img height="100" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
 <small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
 
