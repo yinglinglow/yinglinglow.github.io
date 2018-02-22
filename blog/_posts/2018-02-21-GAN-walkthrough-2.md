@@ -77,7 +77,7 @@ Now that we have our dataset, let's clean it up which entails center-cropping an
       </tr>
       <tr>
         <td align="center">28x28</td> 
-        <td align="center">~5 hours (5000 epochs)</td> 
+        <td align="center">~10 hours (5000 epochs)</td> 
       </tr>
       <tr>
         <td align="center">56x56</td> 
