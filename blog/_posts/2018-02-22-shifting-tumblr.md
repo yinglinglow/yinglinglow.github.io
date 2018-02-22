@@ -15,3 +15,5 @@ amazing stuff. you do need ruby and `sudo gem install jekyll-import` though
 love it.
 
 if you ever get an error, remember to check your URL - there shouldn't be a '/' at the end!
+
+for the guys who use markdown in your usual blog posts (like me), still import using html! i find that it preserves the paragraphing and all better.
