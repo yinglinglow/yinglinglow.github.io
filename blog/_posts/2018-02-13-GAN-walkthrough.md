@@ -56,7 +56,9 @@ Similarly for GANs:
 </div>
 </pre>
 
-If a model does the right thing (make real images or gives correct labelling), the competing model learns about it and improves its competing techniques, making life more difficult for itself subsequently (hence, -10). If a model lies but the competing model does the right thing, it 'wins' because it gathers more information about the competing model, without revealing any information about itself (hence, 20). If both lie, neither learns anything about each other (hence, 0). By the concept of the Nash equilibrium, it predicts that both models should try their best to make real images/give the correct labelling always, and at the equilibrium, the generator network is able to produce real looking images perfectly, and the discriminator network cannot distinguish the real images from the fake images.
+If a model does the right thing (make real images or gives correct labelling), the competing model learns about it and improves its competing techniques, making life more difficult for itself subsequently (hence, -10). If a model lies but the competing model does the right thing, it 'wins' because it gathers more information about the competing model, without revealing any information about itself (hence, 20). If both lie, neither learns anything about each other (hence, 0). By the concept of the Nash equilibrium, it predicts that both models should try their best to make real images/give the correct labelling always. 
+
+At the equilibrium, the generator network is able to produce real looking images perfectly, and the discriminator network cannot distinguish the real images from the fake images.
 
 We will see later that there are limitations to this (see [here](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html#hard-to-achieve-nash-equilibrium) for more!), but let's take this for now. In fact, since the introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model. You will be amazed at how fast people innovate - we can even generate images from text now!! Imagine reading a Harry Potter book and images generating as you go along...
 
@@ -85,7 +87,13 @@ Let's look at the general structure of a GAN from a more practical perspective. 
 
 Basically, the Generator tries to learn all the possibilities of a real image, and returns the most likely image of a dog. For example, it can learn that images of dogs with black, brown or white fur can all be real; an image of a dog with two eyes is real, but an image of a dog with three eyes is not! Hence it can return a two eyed black dog or a two eyed brown dog, but not likely a three eyed black dog. In such a way, it tries to produce fake images that are as real as possible, so as to trick the Discriminator. In technical terms, the Generator is trying to capture the distribution of the training data and produce the most likely outcome, to maximise the probability of the Discriminator making a mistake.
 
-But how does the Generator actually 'learn'? Honestly, at the beginning things are quite random. The Generator generates random images (it can even be just ranomly coloured pixels!) and gives them to the Discriminator. Perhaps the Discriminator gets tricked, and says that a few of the images are real! Aha, now the generator reviews the 'real' images and attempts to make more fake images similar to those. Slowly, it gets better at tricking the Discriminator.
+Below is an example with the red distribution being the fake distribution the Generator is coming up with, and the blue distribution being the actual. The Generator is trying to move towards the blue distribution, and at equilibrium, have the same exact distribution.
+
+<pre>
+<img height="400" src="https://user-images.githubusercontent.com/21985915/36637982-b26a0db4-1a22-11e8-87b8-487a16104671.png"><br>
+</pre>
+
+But how does the Generator actually 'learn'? Honestly, at the beginning things are quite random. The Generator generates random images (it can even be just randomly coloured pixels!) and gives them to the Discriminator. Perhaps the Discriminator gets tricked, and says that a few of the images are real! Aha, now the generator reviews the 'real' images and attempts to make more fake images similar to those. Slowly, it gets better at tricking the Discriminator.
 
 You might wonder, how will the Discriminator be so stupid as to think random images are real? In fact the Discriminator at the beginning does not know what is real or fake as well! It is randomly picking, before it receives feedback as to which images are actually real images or fake images produced by the Generator. From this feedback, it begins to learn all the different possibilities of a real image (capturing the distribution of the true data), and from there learn to differentiate between real or fake images. Technically, it assesses the likelihood of the picture coming from the true data distribution; the lower this likelihood, the lower the chances of it being a real image.
 
@@ -153,6 +161,9 @@ There are many different varieties of GAN - you can refer [here](https://github.
   __WGAN (Wasserstein GAN):__<br> 
   Remember the original GAN just looks at the difference between the real data distribution and the generated data distribution? There's a caveat - if the true and fake distributions do not overlap, the feedback given is just 0 or infinity. How can the Discriminator or Generator learn effectively in that case? The feedback is not useful as to how they should change. That's part of the reason why GANs are so difficult to train. Enter the Wasserstein-1 distance (Earth-Mover distance) - basically in this case, even if the two distributions have no overlap, at least it describes how far apart they are so that they can learn (instead of just returning 0 or infinity!)
 
+<pre>
+<img height="400" src="https://user-images.githubusercontent.com/21985915/36637984-b393ed5e-1a22-11e8-998e-836515d1ad88.png">
+</pre>
 
 You would be pleased to know that we will be running DCGAN and WGAN in our walkthrough later on. In the meantime, let me talk a little more about WGAN since we will be running a slight variation of that.
 
