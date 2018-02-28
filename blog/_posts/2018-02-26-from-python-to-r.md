@@ -106,3 +106,139 @@ also, if NA for your string is represented by '', remember to add `na.strings = 
 
 ---
 
+seq() is the equivalent of range()
+
+rep(vector, times = 2) repeats the vector by the number of times, entirely. changing times to each repeats each element in the vector several times first, before going to the next element
+
+is.*() checks for type
+
+as.*() converts it to type e.g. as.data.table() but need to import library(data.table)
+
+rev() reverses the order
+
+grepl(patterns = regex, x = string) search for regex in the string, returns logical
+
+grep() returns indices instead
+
+sub() replaces the first match
+
+gsub() replaces all
+
+Sys.Date() returns a date object, today's date
+Sys.time() current time
+as.Date() to convert
+
+---
+
+learning dplyr: select, mutate, filter, arrange, summarize
+
+names(df) is the equivalent of df.columns
+n() gives the length of the df
+
+```R
+df_less <- df %>%
+    select(df, 1:5, -2) # select columns 1 to 5, excluding 2.
+
+df_lesser <- df %>%
+    select(df, year, country, lifeExp:pop) # select columns by name
+```
+
+helper functions in select:
+
+starts_with("X"); ends_with("X"); contains("X");<br>
+matches("X") "X" can be a regular expression;<br>
+num_range("x", 1:5) this gives the variables named x01, x02, x03, x04 and x05;<br>
+one_of(x): every name that appears in x, which should be a character vector.<br>
+
+```R
+library(dplyr)
+df %>% # pipes this result into the first argument in the next step
+    filter(year == 1990, country == "United States") # to filter rows
+    arrange(desc(year)) # to arrange
+    mutate(lifeExpMonths = lifeExp * 12) # to create a new column
+
+by_year_continent <- df %>% # assign the result to a variable
+    filter(year <= 1990) %>%
+    group_by(continent, year) %>% # group by
+    summarize(meanLifeExp = mean(lifeExp), # to summarize
+              totalPop = sum(pop))
+
+
+```
+
+learning ggplot2
+
+```R
+library(ggplot2)
+
+# scatterplots
+ggplot(df, aes(x = pop, y = gdpPercap, color = continent, size = pop)) + # color and size
+  geom_point() + # geom_point is scatterplot
+  scale_x_log10() + # puts x on log scale. if y, just use scale_y_log10()
+  expand_limits(x=0) # sets x axis to start at 0
+
+# subplots
+ggplot(df, aes(x = pop, y = gdpPercap, color = continent, size = pop)) + # color and size
+  geom_point() + 
+  facet_wrap(~ continent) # creates subplots by continent
+```
+
+to plot a line plot, change `geom_point()` to `geom_line()`.
+
+bar plot: `geom_col()`.
+
+histogram: `geom_histogram(binwidth = 5)`
+
+boxplot: `geom_boxplot()`
+
+to add title: `+ ggtitle("Title")`
+
+
+---
+
+connecting to mysql
+
+# Set up a connection to the mysql database
+my_db <- src_mysql(dbname = "dplyr", 
+                   host = "courses.xxx.us-east-1.rds.amazonaws.com", 
+                   port = 3306, 
+                   user = "student",
+                   password = "xxx")
+
+# Reference a table within that source: df
+df <- tbl(my_db, "dplyr")
+
+
+---
+
+### linear regression
+```R
+model <- lm(y ~ x, data = df)
+summary(model)
+```
+
+### tidying data up
+```R
+library(broom) # to tidy up the results from summary, turns model into a df
+tidy(model)
+bind_rows(tidy(model1), tiday(model2)) # combine results into one big df
+```
+
+```R
+library(tidyr)
+nested <- by_year_country %>%
+    nest(-country) %>% # nest all except country column, into a data column (is a list). there is a tibble (df) for each country
+    unnest(data) # brings it back up to the same level 
+```
+
+to retrieve one of the nested data, use indexing: `nested$data[[7]]`
+
+```R
+library(purrr)
+by_year_country %>%
+    nest(-country) %>%
+    mutate(models = map(data, ~ lm(percent_yes ~ year, .))) %>% # map applies function to all items in the list. in this case the function is a linear model
+    mutate(tidied = map(models,tidy)) %>% # tidies the models
+    unnest(tidied) # unnest the tidied models
+
+``` 
