@@ -133,7 +133,8 @@ For those interested, Adit did a [fantastic writeup here](https://adeshpande3.gi
 __Discriminator architecture__<br>
 For the discriminator, it takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The convolution gif belows shows how the original number of values (in blue) is reduced (green). Eventually it returns a binary output, classifying the image as real or fake.
 
-<pre>
+<span style="white-space:pre">
+
   <b>Convolution<b><br>
   <img height="100" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
   <small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
@@ -141,7 +142,8 @@ For the discriminator, it takes in an image (either real or fake), passes the im
 
   <img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'><br>
   <small><i>Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1</i></small>
-</pre>
+
+</span>
 
 ## Types of GAN
 
