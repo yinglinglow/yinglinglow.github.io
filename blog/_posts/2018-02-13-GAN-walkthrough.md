@@ -102,7 +102,7 @@ From the above example, we can see that it is important for the Generator and th
 __Generator architecture__<br>
 Zooming into the Generator model (which produces the fake image) - specifically, the Generator takes in random numbers (say, an array of 100 points) as an input, and projects it to a 3D array. In between, transposed convolution (also known as fractionally strided convolutions/ deconvolution) is increasing the size of the image (e.g. from a 2x2 to a 4x4). The animations below show the different manners in which a smaller image (blue squares) can be formed up into a larger image (green). The final output is an image, e.g. a 56x56x3 array which gives a 56x56 RGB image (3 colour channels).
 
-<small>For those interested, Adit did a [fantastic writeup here](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/) explaining in detail the workings of CNNs.</small>
+For those interested, Adit did a [fantastic writeup here](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/) explaining in detail the workings of CNNs.
 
 <pre>
 
@@ -133,15 +133,15 @@ Zooming into the Generator model (which produces the fake image) - specifically,
 __Discriminator architecture__<br>
 For the discriminator, it takes in an image (either real or fake), passes the image through convolution layers and reduces it in size (e.g. 4x4 to 2x2). The convolution gif belows shows how the original number of values (in blue) is reduced (green). Eventually it returns a binary output, classifying the image as real or fake.
 
+<pre>
+  <b>Convolution<b><br>
+  <img height="100" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
+  <small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
-<b>Convolution<b><br>
-<img height="100" src='https://user-images.githubusercontent.com/21985915/36372514-3e585254-15a0-11e8-8976-901a19b7c3f7.gif'><br>
-<small><i>Credits: vdumoulin, https://github.com/vdumoulin/conv_arithmetic</i></small>
 
-
-<img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'><br>
-<small><i>Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1</i></small>
-
+  <img width="500" src='https://user-images.githubusercontent.com/21985915/36368309-9c303e3c-1591-11e8-84ee-ccdaff524ab2.png'><br>
+  <small><i>Credits: https://hackernoon.com/how-do-gans-intuitively-work-2dda07f247a1</i></small>
+</pre>
 
 ## Types of GAN
 
