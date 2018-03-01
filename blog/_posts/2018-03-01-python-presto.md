@@ -167,3 +167,36 @@ ORDER BY c.name;
 ---
 
 progressed to hackerrank to practice SQL! it's quite difficult... _gulps_
+
+---
+
+i guess postgresql is very different from Oracle!!!
+for selecting even numbers. if not Oracle, use `ID % 2 = 0` instead!
+
+```SQL
+SELECT DISTINCT city
+FROM STATION
+WHERE mod(ID,2) = 0;
+```
+
+for selecting the number of distinct values in the city column
+
+```SQL
+SELECT count(DISTINCT city)
+FROM station;
+```
+
+to select the max and min length of characters in the city name
+
+```SQL
+SELECT City, LENGTH(City)
+FROM (SELECT City
+      FROM Station
+     ORDER BY LENGTH(City), City)
+WHERE ROWNUM = 1;
+SELECT City, LENGTH(City)
+FROM (SELECT City
+      FROM Station
+     ORDER BY LENGTH(City) DESC, City)
+WHERE ROWNUM = 1;
+```
