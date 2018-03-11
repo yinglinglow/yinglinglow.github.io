@@ -198,14 +198,14 @@ to add title: `+ ggtitle("Title")`
 
 connecting to mysql
 
-# Set up a connection to the mysql database
+__Set up a connection to the mysql database__
 my_db <- src_mysql(dbname = "dplyr", 
                    host = "courses.xxx.us-east-1.rds.amazonaws.com", 
                    port = 3306, 
                    user = "student",
                    password = "xxx")
 
-# Reference a table within that source: df
+__Reference a table within that source: df__
 df <- tbl(my_db, "dplyr")
 
 
