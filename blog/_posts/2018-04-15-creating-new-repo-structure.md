@@ -99,6 +99,10 @@ in fact, in this way all my test files will not need to include the earlier snip
 
 i tried to do the same for the project folders with `__init__.py` to no avail... i think it's because of where i'm calling the files from. oh wells, it don't matter.
 
+caveat:
+- somehow i can't run my tests individually using this T.T it only works if i run all of them...
+(i know `pytest test_setup.py test\lib\test_sayhello.py` is supposed to work but... it doesn't T.T and i don't know why!!)
+
 ---
 
 on a side note, i made the foolish mistake of not naming my test functions with a 'test_' prefix and my tests didn't run for the longest time.
