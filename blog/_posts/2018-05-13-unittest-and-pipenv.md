@@ -66,4 +66,30 @@ it should reflect 4 tests ran (passed in the above case!)
 
 ---
 
-maybe i'll provide a more practical example next time lol
+in a more practical scenario:
+
+- you need to refer to your fixtures in another folder.
+
+```python
+
+import pathlib
+import unittest
+import sys
+import pandas as pd
+from pandas.util.testing import assert_frame_equal
+
+path = str(pathlib.Path(file).parents[1]) # generate path to two folders up
+if path not in sys.path:
+    sys.path.append(path)
+from main import create_df
+
+class Test_main(unittest.TestCase):
+    def test_table1(self):
+        path = str(pathlib.Path(__file__).parents[1]) # generates path to proj_root
+        t_filepath = f'{path}/fixtures/xxx.csv'
+        t= create_df(t_filepath)
+
+        t_test= pd.read_csv(f'{path}/fixtures/xxx.csv', dtype={'col1': str})
+        assert_frame_equal(t.head(), t_test)
+
+```
