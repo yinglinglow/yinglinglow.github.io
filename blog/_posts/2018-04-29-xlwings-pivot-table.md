@@ -14,8 +14,37 @@ df.to_excel()
 
 ```
 
+__2) Write dataframe from pandas into excel sheet with number and cell color formatting__:
 
-__2) Write your Excel into pre-formatted Excel sheets__ see here: https://stackoverflow.com/questions/9920935/easily-write-formatted-excel-from-python-start-with-excel-formatted-use-it-in
+```python
+
+# write to excel   
+writer = pd.ExcelWriter(destination_filepath,engine='xlsxwriter')   
+workbook=writer.book
+worksheet=workbook.add_worksheet('sheetname')
+writer.sheets['sheetname'] = worksheet
+
+# define formats
+format_num = workbook.add_format({'num_format': '_(* #,##0_);_(* (#,##0);_(* "-"??_);_(@_)'})
+format_perc = workbook.add_format({'num_format': '0%;-0%;"-"'})
+format_header = workbook.add_format({'bold': True, 'bg_color': '#C6EFCE'})
+
+# write individual cells
+worksheet.write(0, 2, "sheetname", format_header)
+worksheet.write(1, 2, sum(df['abc']))
+worksheet.write(1, 3, sum(df['def']))
+worksheet.write(1, 4, sum(df['ghi']))
+
+# write dataframe in
+df.to_excel(writer,sheet_name='sheetname', startrow=2, startcol=0, index=False)  
+worksheet.set_column(1, 1, 45)
+worksheet.set_column(2, 4, 15, format_num)
+worksheet.set_column(5, 5, 15, format_perc)
+writer.save
+
+```
+
+__3) Write your dataframe into pre-formatted Excel sheets__ see here: https://stackoverflow.com/questions/9920935/easily-write-formatted-excel-from-python-start-with-excel-formatted-use-it-in
 
 ```python
 
