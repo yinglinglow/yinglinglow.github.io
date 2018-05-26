@@ -6,12 +6,22 @@ date: 2018-04-29
 
 guys - this is life-changing. AUTOMATE ALL YOUR EXCEL REPORTS WITH PYTHON!!
 
-__1) Basic writing of dataframe from pandas into an excel sheet__ see here: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_excel.html
+__1) Basic writing of dataframe from pandas into an excel sheet__ see here: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_excel.html AND http://xlsxwriter.readthedocs.io/example_pandas_multiple.html
 
 ```python
 
+# writing one dataframe to one excel file
 df.to_excel()
 
+
+# writing multiple dataframas into different sheets
+writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')
+
+df1.to_excel(writer, sheet_name='Sheet1')
+df2.to_excel(writer, sheet_name='Sheet2')
+df3.to_excel(writer, sheet_name='Sheet3')
+
+writer.save()
 ```
 
 __2) Write dataframe from pandas into excel sheet with number and cell color formatting__:
