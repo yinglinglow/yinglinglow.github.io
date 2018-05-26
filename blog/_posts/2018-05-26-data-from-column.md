@@ -13,3 +13,13 @@ in short, if you want to replace all the column As with column Bs, but only in r
 df_copy.loc[df['D']=='Test', 'A'] = df['B']
 
 ```
+
+---
+
+if you just wanted to fill nas from another column:
+
+```python
+
+df['A'] = df['A'].fillna(df['B'])
+
+```
