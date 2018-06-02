@@ -10,12 +10,16 @@ In any case, here is NYC's Taxi Data from Numenta: https://www.kaggle.com/boltzm
 
 I broke it down into several timeframes for different perspectives.
 
+2 weeks' worth of data:
 <img width='860' src='https://user-images.githubusercontent.com/21985915/40870073-f8e07d40-6659-11e8-93ba-1dc4f0ea9967.png'>
 
+1 month's worth of data:
 <img width='860' src='https://user-images.githubusercontent.com/21985915/40870030-d99d2ef2-6658-11e8-9a1c-dafe3ffa6df3.png'>
 
+3 months' worth of data:
 <img width='860' src='https://user-images.githubusercontent.com/21985915/40870032-da07b218-6658-11e8-8e40-ac2484e4edb4.png'>
 
+6 months'
 <img width='860' src='https://user-images.githubusercontent.com/21985915/40870034-da3633ae-6658-11e8-9ddb-a0f82122315c.png'>
 
 ```python
