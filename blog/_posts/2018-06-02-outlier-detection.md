@@ -12,7 +12,7 @@ Amazing stuff.
 
 I downloaded some ec2 cpu utilisation data with anomalies from the Numenta Anomaly Benchmark (NAB) https://www.kaggle.com/boltzmannbrain/nab/data, pip installed pyculiar and BOOM - with a few lines of code:
 
-<img src='https://user-images.githubusercontent.com/21985915/40869323-9a585012-664b-11e8-8ffc-e205d32cce32.png'>
+<img width='500' src='https://user-images.githubusercontent.com/21985915/40869323-9a585012-664b-11e8-8ffc-e205d32cce32.png'>
 
 
 ```python
