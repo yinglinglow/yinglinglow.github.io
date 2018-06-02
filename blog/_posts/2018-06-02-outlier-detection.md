@@ -48,8 +48,7 @@ ax[1].plot(results['anoms'].index, results['anoms']['anoms'], 'b')
 ax[1].set_xlabel('Time Stamp')
 ax[1].set_ylabel('Anomaly Magnitude')
 
-#plt.xticks(rotation=45)
-#plt.show()
+# save the plot
 plt.savefig('aws.png')
 
 ```
