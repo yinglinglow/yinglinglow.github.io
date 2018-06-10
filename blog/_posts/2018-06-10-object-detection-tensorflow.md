@@ -67,7 +67,7 @@ Who knew, poodles (if they are sufficiently cute) can be classified as teddy bea
 
 MORE TEDDY BEARS!!! LOL
 
-<img width="500" src="https://user-images.githubusercontent.com/21985915/41198261-feced982-6ca7-11e8-8705-e591b2a0846e.jpg">
+<img width="500" src="https://user-images.githubusercontent.com/21985915/41198264-ff7cd906-6ca7-11e8-852e-bf5546cba958.jpg">
 
 
 This is my dog! I need to level him up to teddy bear cuteness level LOL
@@ -76,7 +76,7 @@ This is my dog! I need to level him up to teddy bear cuteness level LOL
 
 Still my dog - still a dog LOL
 
-<img width="500" src="https://user-images.githubusercontent.com/21985915/41198261-feced982-6ca7-11e8-8705-e591b2a0846e.jpg">
+<img width="500" src="https://user-images.githubusercontent.com/21985915/41198262-ff0e5d0a-6ca7-11e8-8ca1-328c9672da74.jpg">
 
 
 Hypothesis: does it know it's a dog because of its position (lying down)? Teddy bears don't lie down.
@@ -85,7 +85,7 @@ Let's use a dog and a soft toy, both lying down on the floor, to try.
 Result: soft toy detected as a CAT, dog detected as a BEAR!!!!!!
 Love this HAHAHAHAHA
 
-<img width="500" src="https://user-images.githubusercontent.com/21985915/41198261-feced982-6ca7-11e8-8705-e591b2a0846e.jpg">
+<img width="500" src="https://user-images.githubusercontent.com/21985915/41198263-ff3d90a2-6ca7-11e8-9de9-0562fc0e211d.jpg">
 
 
 
