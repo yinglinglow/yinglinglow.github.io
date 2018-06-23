@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Object Detection on Live Video"
-date: 2018-06-23
+date: 2018-06-24
 ---
 
 holy comoly
