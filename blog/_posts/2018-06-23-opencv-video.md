@@ -4,10 +4,9 @@ title: "OpenCV - Recording and Save Video"
 date: 2018-06-23
 ---
 
-After a million years of googling... I figured out the issue.
-The code doesn't work in Jupyter Notebook *faints*
+So the issue is, everytime I close the window my video is showing on, it hangs and I have to force quit Python. I couldn't figure out for the life of me what the heck was going on and finally, FINALLY after a million years of googling I realised...the code doesn't work in Jupyter Notebook *faints*
 
-In any case - thanks to a guy who raised that up and stopped my endless blind searching for solutions for Jupyter Notebook, I am running the code in a .py file and it works!!
+In any case - thanks to a guy who raised that up and stopped my endless blind searching for solutions!!!!! I am now running the code in a .py file and it works!!
 
 Follow the code below (credits to this guy: https://www.learnopencv.com/read-write-and-display-a-video-using-opencv-cpp-python/) if you want to record a live video. It opens the camera, records the video, closes the window when you press 'q', and saves the video in .avi format.
 
