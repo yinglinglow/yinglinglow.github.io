@@ -48,10 +48,35 @@ An image below to illustrate the process:
 
 ---
 
-That's all for today - more to come next time!
+__How does it compare against other alternatives?__
+The above is a Classical Decomposition. Read more about its short-comings here: https://otexts.org/fpp2/classical-decomposition.html#fig:classical-elecequip
+
+Essentially: 
+1) No estimates for first and last few observations
+2) Unable to capture seasonal changes over time
+3) No robust to unusual values
+
+Alternatives:
+- STL (Seasonal and Trend decomposition using Loess)
+- X11
+- SEATS
+
+Random:
+- ARIMA:
+AutoRegressive Integrated Moving Average (ARIMA) is a generalised ARMA model. 
+AR: autoregressive - output variable depends linearly on its own previous values + stochastic (possible values are outcome of a random phenomenon).
+MA: moving average - output variable depends on residuals/regression error (the difference of the actual from the predicted) of previous forecasts.
+I: integrated - differencing (replacing data values with the difference between their values and the previous values) the data to remove the trend and convert a non-stationary time series to a stationary one (values remain at fairly constant levels over time)
+
+
+That's all for today - more to come next time! 
+
+Such as:
+__How does Time Series Decomposition actually work?__
 
 More links for readings (and as credits cause I learnt so much from them!):
 - https://www.economicsnetwork.ac.uk/showcase/cook_timeseries
 - http://home.ubalt.edu/ntsbarsh/stat-data/forecast.htm#rasofm
 - https://www.quora.com/What-are-the-practical-aspects-of-outlier-detection-in-time-series-data
-
+- https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
+- https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model
