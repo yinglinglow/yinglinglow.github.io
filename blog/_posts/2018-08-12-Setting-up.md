@@ -44,6 +44,9 @@ If you need it on Linux: https://docs.python-guide.org/starting/install3/linux/#
 
 *In the step which says to add the line to your ~/.profile file: if you don't have a .profile file, just create it (I used VisualStudioCode to create it and just pasted the line in and saved it).
 
+__If you installed Python its own... install pipenv!__
+While pip can install packages, pipenv is recommended to simplify dependency management. See here: https://docs.pipenv.org/install/
+
 __I am using Jupyter Notebook to code. What's Spyder and Visual Studio Code and all these things called IDEs?__
 You can run your code in Jupyter Notebook, but that's not a script, it's a Jupyter Notebook file type - you have to save it as a .py file 
 in order to be able to run it using 'python yourscript.py' in the terminal. And you want to do that because if I have many many scripts to run,
