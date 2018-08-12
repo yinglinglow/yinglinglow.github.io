@@ -31,36 +31,10 @@ In any case, that was what motivated Ian Goodfellow to develop GANs - he thought
 
 Let's try to understand this on a conceptual level. A GAN is made up of two models: a __Generator__ to generate fake images (with the aim of fooling the Discriminator), and a __Discriminator__ to differentiate on the real and fake images (but it should not reveal too much - otherwise the Generator learns to make better fakes, making life more difficult for himself!). Each party gets better at what they do as they compete with each other (the Generator at producing real-looking fake images, and the Discriminator at classifying). 
 
-This adversarial type of modelling is not so foreign to us - recall the Nash equilibrium concept in Economics. In the prisoner's dilemma (more details [here](https://www.economist.com/blogs/economist-explains/2016/09/economist-explains-economics)), collectively both prisoners should not confess to the crime, and they will get off with a minimum sentence. Yet by the Nash equilibrium, by considering what my other prisoner will do, it predicts that both prisoners will confess, even though they are both worse off. Because if you confess, I should confess too (a few years sentence versus if I don't confess and get a lifetime sentence). If you don't confess and I do, I get off free! No matter what you do, I should confess. This is true for both parties.
+The GAN model converges when the discriminator and the generator reach a Nash Equilibrium - when one player will not
+change its action regardless of what its opponent may do (recall the prisoner's dilemma - if the other prisoner confesses, I should confess; if he doesn't I am still better off confessing).
 
-Similarly for GANs:
-<pre>
-<div class="table-responsive">
-  <table style="border:1;" class="table">
-    <tr>
-      <td></td>
-      <td align="center"><b>Confess (Make real looking images)</b></td>
-      <td align="center"><b>Lie (Make fake looking images)</b></td>
-    </tr>
-    <tr>
-      <td align="center"><b>Confess (Give correct labelling)</b></td> 
-      <td align="center">(-10, -10)</td> 
-      <td align="center">(-10, 20)</td>
-    </tr>
-    <tr>
-      <td align="center"><b>Lie (Give wrong labelling)</b></td>
-      <td align="center">(20, -10)</td>
-      <td align="center">(0, 0)</td>
-    </tr>
-  </table>
-</div>
-</pre>
-
-If a model does the right thing (make real images or gives correct labelling), the competing model learns about it and improves its competing techniques, making life more difficult for itself subsequently (hence, -10). If a model lies but the competing model does the right thing, it 'wins' because it gathers more information about the competing model, without revealing any information about itself (hence, 20). If both lie, neither learns anything about each other (hence, 0). By the concept of the Nash equilibrium, it predicts that both models should try their best to make real images/give the correct labelling always. 
-
-At the equilibrium, the generator network is able to produce real looking images perfectly, and the discriminator network cannot distinguish the real images from the fake images.
-
-We will see later that there are limitations to this (see [here](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html#hard-to-achieve-nash-equilibrium) for more!), but let's take this for now. In fact, since the introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model. You will be amazed at how fast people innovate - we can even generate images from text now!! Imagine reading a Harry Potter book and images generating as you go along...
+In reality, convergence is difficult (see [here](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html#hard-to-achieve-nash-equilibrium) for more!), but let's take this for now. In fact, since the introduction of GANs in 2014, the tech community has made significant progress in terms of improving the original model. You will be amazed at how fast people innovate - we can even generate images from text now!! Imagine reading a Harry Potter book and images generating as you go along...
 
 <pre>
 <b>Generating new Pokemons:</b><br>
@@ -78,7 +52,7 @@ We will see later that there are limitations to this (see [here](https://lilianw
 
 ## General Model Structure
 
-Let's look at the general structure of a GAN from a more practical perspective. In a GAN, two models are trained at the same time.One model is the __Generator__: it takes random noise as input and produces fake images. The second model is the __Discriminator__: it takes both real images and fake images (created by the Generator) as input, and has to figure out how to identify which are real images and which are fake.
+Let's look at the general structure of a GAN from a more practical perspective. In a GAN, two models are trained at the same time. One model is the __Generator__: it takes random noise as input and produces fake images. The second model is the __Discriminator__: it takes both real images and fake images (created by the Generator) as input, and has to figure out how to identify which are real images and which are fake.
 
 <pre>
 <img height="400" alt="gan-model" src="https://user-images.githubusercontent.com/21985915/36364510-6a5329fe-157f-11e8-81b3-ee3a7d5d8d48.jpg"><br>
