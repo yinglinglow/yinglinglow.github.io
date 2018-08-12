@@ -63,7 +63,12 @@ Version 1.1. You make more changes and save them as 1.2, 1.3, 1.4. Oops! You rea
 In VSC, install the Gitlens extension for easier navigation of your repository.
 
 
-Extra reading:
+---
+
+Ok that's all for today!!
+For now. lol
+
+For anyone who is interested, some questions popped up into my head as I was writing today's post - feel free to read up in the links below:
 - Difference between MacOS and Linux: https://itsfoss.com/mac-linux-difference/
 - Packages and modules in Python: https://realpython.com/python-modules-packages/
 - Version control: https://www2.le.ac.uk/services/research-data/organise-data/version-control
