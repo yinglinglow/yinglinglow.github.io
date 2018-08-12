@@ -7,8 +7,8 @@ date: 2018-08-12
 Since I lost everything on my computer, I have to reinstall everything!
 
 I'll take this chance to write a guide on how to set up your Mac for coding Python!
-Before that, I'll tackle some common FAQs which I myself was asking just a few months ago...!
-This is probably more relevant to programming beginners.
+(Post-edit: Ok this turned out more like common FAQs which I myself was asking just a few months ago...!
+This is probably more relevant to programming beginners.)
 
 __How do I install Python?__
 1) Using Anaconda for Python here: https://anaconda.org/anaconda/python
