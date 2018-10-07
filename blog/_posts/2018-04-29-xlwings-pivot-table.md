@@ -161,3 +161,15 @@ Excel.Application.Quit()
 
 __Special feature for xlwings__ see here: http://docs.xlwings.org/en/stable/quickstart.html
 
+
+---
+
+__Update (2018-10-08)__:
+
+So I've been approached to share this link here: https://www.pyxll.com/blog/tools-for-working-with-excel-and-python/
+
+Mostly a pitch for PyXLL, but also includes snippets of various tools for working with python and excel.
+
+Always helpful to know about alternative solutions out there and their pros and cons (lots of features and seems fairly powerful - if you can convince your company to fork out $250 a year, per user).
+
+For me... I think I will stick to the free and open source alternatives for now :p
