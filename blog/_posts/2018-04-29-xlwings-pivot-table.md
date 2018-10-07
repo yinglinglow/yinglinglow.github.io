@@ -6,10 +6,11 @@ date: 2018-04-29
 
 guys - this is life-changing. AUTOMATE ALL YOUR EXCEL REPORTS WITH PYTHON!!
 
-__1) Basic writing of dataframe from pandas into an excel sheet__ see here: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_excel.html AND http://xlsxwriter.readthedocs.io/example_pandas_multiple.html
+__1) Basic writing of dataframe from pandas into an excel sheet__ 
+
+see here: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_excel.html AND http://xlsxwriter.readthedocs.io/example_pandas_multiple.html
 
 ```python
-
 # writing one dataframe to one excel file
 df.to_excel()
 
@@ -27,7 +28,6 @@ writer.save()
 __2) Write dataframe from pandas into excel sheet with number and cell color formatting__:
 
 ```python
-
 # write to excel   
 writer = pd.ExcelWriter(destination_filepath,engine='xlsxwriter')   
 workbook=writer.book
@@ -54,10 +54,11 @@ writer.save
 
 ```
 
-__3) Write your dataframe into pre-formatted Excel sheets__ see here: https://stackoverflow.com/questions/9920935/easily-write-formatted-excel-from-python-start-with-excel-formatted-use-it-in
+__3) Write your dataframe into pre-formatted Excel sheets__ 
+
+see here: https://stackoverflow.com/questions/9920935/easily-write-formatted-excel-from-python-start-with-excel-formatted-use-it-in
 
 ```python
-
 import xlrd 
 import xlutils.copy 
 
@@ -92,10 +93,11 @@ outBook.save('output.xls')
 ```
 
 
-__3) Creating a PivotTable in Excel__ see here: https://stackoverflow.com/questions/22532019/creating-pivot-table-in-excel-using-python
+__3) Creating a PivotTable in Excel__ 
+
+see here: https://stackoverflow.com/questions/22532019/creating-pivot-table-in-excel-using-python
 
 ```python
-
 import win32com.client
 Excel   = win32com.client.gencache.EnsureDispatch('Excel.Application') # Excel = win32com.client.Dispatch('Excel.Application')
 
@@ -159,8 +161,16 @@ Excel.Application.Quit()
 ```
 
 
-__Special feature for xlwings__ see here: http://docs.xlwings.org/en/stable/quickstart.html
+__Special feature for xlwings__ 
 
+see here: http://docs.xlwings.org/en/stable/quickstart.html
+
+
+__Bonus: Datables__
+
+Not excel but get interactive tables on your webpage!! Simple, impressive and FREE lol.
+
+https://datatables.net/
 
 ---
 
