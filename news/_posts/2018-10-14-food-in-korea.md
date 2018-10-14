@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Visiting Korea - FOOD"
+title: "Visiting Korea - Food, beauty, and photography"
 date: 2018-10-14
 ---
 
@@ -17,9 +17,9 @@ Be sure to download your offline maps and all before you leave any wifi zone!
 
 ---
 
-on to the main point of this post: FOOD!
+on to the (first) main point of this post: __FOOD!__
 
-I just need to share this because honestly, we found it not so easy to find updated blogs in 2018 about what food to eat...
+I just need to share this because honestly, we found it not so easy to find updated blogs in 2018 about what food to eat in Seoul...
 
 I did not see these blogs before I went, unfortunately: 
 
@@ -167,6 +167,10 @@ See: https://www.instagram.com/explore/locations/517161245/
 
 - __Goraesa Fish Cake__: At Shinsegae Central City food hall, try the fish cake! It's yummy
 
+- __O'sulloc Roll Cake__: surprisingly yummy!
+
+- __Kyochon Fried Chicken__: crunchy, crispy fried chicken!
+
 
 Those that I didn't try but heard was good:
 - __Eggdrop__: Try it if you are at Sinchon station!!
@@ -179,6 +183,7 @@ Decent food we ate but nothing to shout about:
 - __Isaac Toast__: Toast for breakfast
 - __Paris Baguette__: Bread for breakfast
 - __Tous Les Jours__: Bread for breakfast
+- __Beansbins__: Ice cream waffle
 - __Eomeonijip Seafood Stew__: Seafood soup in Myeongdong if you really want to try it and have no time to travel out. Somewhat decent but slightly overpriced I feel.
 
 
@@ -188,8 +193,48 @@ To avoid:
 
 ---
 
-__Beyond food - eyelash extensions!__
+and beyond food now...
+
+__BEAUTY! eyelash extensions__
 
 If you want to do eyelash extensions in Seoul, try __Urbane.D__, she speaks english, and is really nice! It's at Ewha Women's University. Take Exit 5, turn left once you come out, turn right at the first lane, and you should see a banner on the ground floor. It is in the same location as a tanning studio.  Costs 50,000 won to do black lashes, 60,000 won for dark brown or brown lashes. It was my first time doing extensions, she was great and it didn't hurt one bit. I did a JC curl, 9-11mm. Email her for an appointment in advance, at zicoco0826@naver.com. You can also check out their instagram at: https://www.instagram.com/urbane_d/
 
 After that, buy mascara combs at Daiso for just 1,000won! You'd be surprised how many comestic shops I had to comb through (pun intended lol) to no avail, until I went into Daiso and got 8 combs!!
+
+__Masks__
+
+Also if you are buying masks in Seoul, I heard Dr Jart+ is good and is cheaper (New York brand but made in Korea!). Olive Young has 1+1 sales (buy one get one free) sometimes, and they have on the spot tax refund (if you spend over 30,000 won) for convenience.
+
+---
+
+__Photography!!__
+
+Now, if you are looking for a freelance photographer (as opposed to studios) to help you take pre-wedding shots in Seoul, Korea, you are in luck! Cause I did the research beforehand lol
+
+- https://www.jeongyi.com/
+- https://www.welkinlight.com/seoul-pre-wedding-photographer/
+- https://gregsamborski.com/portfolio/engagement-photography/
+
+These guys are professionals, and fall around the range of $400 USD to $800 USD for 1 to 3 hours. Email them directly for their rates!
+
+Now, I went for another alternative (I'm price-conscious, see): __SweetEscape__
+
+This is an indonesian startup by the famous Axioo photography team in Indonesia (these guys are really good, specialising in wedding photography) that connects you with freelance photographers in each country. These photographers (not necessarily Indonesians, or professionals) are interviewed by the team, and after the photos are taken, they are sent back to headquarters for post-processing. *disclaimer: I have no benefit writing all these, I was just curious and asked my photographer about how the startup works LOL*
+
+It was $400 USD for 2 hours, 40 photos for my package in Seoul, but I used $50 USD referral credits, AND stacked a UOB card discount on top of it, so I got additional discount and additional 30 photos. I got mine from a random forum - otherwise you can use my code (which I will benefit from hehe): https://www.sweetescape.com/en/referral/YN5AR
+
+Moral of the story is, wait for more discounts before you book haha
+
+Supposedly they will send your photos for download after 3 working days - hope I'll get mine soon!! One working day has passed... lol
+
+My photographer was Bryando (he's currently studying in Seoul) - it's my first ever photo taking session, it was great (we went to Haneul Park) and from what we saw of some of the shots he showed us, it looks promising...!!! We'll see ;)
+
+Honestly it was tiring just to pose for 2 hours of photos, I don't know how people do 2 DAYS of photo-taking...
+
+---
+
+__Other random hacks! Tax refunds__
+You don't have to do long queues at the airport - if you are at say Myeongdong or Hongdae and you spot the kind tourist guides (dressed in red), ask them if there are kiosks or counters nearby the area where you can do your refunds. 
+
+__Hanbok rentals__
+Walk around the palaces and you will see Korean traditional rental costumes for 10,000 won for 2 hours, or 15,000 won. If you wear it, you get to enter the palaces for free (costs 3,000 won otherwise), including the secret garden. Different places have different quality of hanboks, and it seems some places do your hair as well...? I went for the cheapest option oops :p so no extra services
