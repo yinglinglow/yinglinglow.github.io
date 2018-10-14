@@ -234,7 +234,9 @@ Honestly it was tiring just to pose for 2 hours of photos, I don't know how peop
 ---
 
 __Other random hacks! Tax refunds__
+
 You don't have to do long queues at the airport - if you are at say Myeongdong or Hongdae and you spot the kind tourist guides (dressed in red), ask them if there are kiosks or counters nearby the area where you can do your refunds. 
 
 __Hanbok rentals__
+
 Walk around the palaces and you will see Korean traditional rental costumes for 10,000 won for 2 hours, or 15,000 won. If you wear it, you get to enter the palaces for free (costs 3,000 won otherwise), including the secret garden. Different places have different quality of hanboks, and it seems some places do your hair as well...? I went for the cheapest option oops :p so no extra services
