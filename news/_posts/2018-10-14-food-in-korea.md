@@ -190,6 +190,6 @@ To avoid:
 
 __Beyond food - eyelash extensions!__
 
-If you want to do eyelash extensions in Seoul, try __Urbane.D__, she speaks english, and is really nice! It's at Ewha Women's University. Take Exit 5, turn left once you come out, turn right at the first lane, and you should see a banner on the ground floor. It is in the same location as a tanning studio.  Costs 50,000 won to do black lashes, 60,000 won for dark brown or brown lashes. It was my first time doing extensions, she was great and it didn't hurt one bit. I did a JC curl, 9-11mm. Email her for an appointment in advance, at zicoco0826@naver.com. You can also check our their instagram: https://www.instagram.com/urbane_d/
+If you want to do eyelash extensions in Seoul, try __Urbane.D__, she speaks english, and is really nice! It's at Ewha Women's University. Take Exit 5, turn left once you come out, turn right at the first lane, and you should see a banner on the ground floor. It is in the same location as a tanning studio.  Costs 50,000 won to do black lashes, 60,000 won for dark brown or brown lashes. It was my first time doing extensions, she was great and it didn't hurt one bit. I did a JC curl, 9-11mm. Email her for an appointment in advance, at zicoco0826@naver.com. You can also check out their instagram at: https://www.instagram.com/urbane_d/
 
 After that, buy mascara combs at Daiso for just 1,000won! You'd be surprised how many comestic shops I had to comb through (pun intended lol) to no avail, until I went into Daiso and got 8 combs!!
