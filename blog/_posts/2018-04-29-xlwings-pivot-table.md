@@ -56,42 +56,22 @@ writer.save
 
 __3) Write your dataframe into pre-formatted Excel sheets__ 
 
-see here: https://stackoverflow.com/questions/9920935/easily-write-formatted-excel-from-python-start-with-excel-formatted-use-it-in
+see the docs for more info: https://docs.xlwings.org/en/stable/datastructures.html
 
 ```python
-import xlrd 
-import xlutils.copy 
+import xlwings as xw
 
-inBook = xlrd.open_workbook('input.xls', formatting_info=True) 
-outBook = xlutils.copy.copy(inBook) 
-
-def _getOutCell(outSheet, colIndex, rowIndex): 
-    """ HACK: Extract the internal xlwt cell representation. """ 
-    row = outSheet._Worksheet__rows.get(rowIndex) 
-    if not row: return None 
-    cell = row._Row__cells.get(colIndex) 
-    return cell 
-
-def setOutCell(outSheet, col, row, value): 
-    """ Change cell value without changing formatting. """ 
-    # HACK to retain cell style. 
-    previousCell = _getOutCell(outSheet, col, row) 
-    # END HACK, PART I 
-    outSheet.write(row, col, value) 
-    # HACK, PART II 
-    if previousCell: 
-        newCell = _getOutCell(outSheet, col, row) 
-    if newCell: 
-        newCell.xf_idx = previousCell.xf_idx 
-    # END HACK 
-
-
-outSheet = outBook.get_sheet(0) 
-setOutCell(outSheet, 5, 5, 'Test') 
-outBook.save('output.xls') 
+list_of_values = [1, 2, 3] # this pastes as a row. to paste as a column, use [[1], [2], [3]]
+workbook_path = 'abc.xlsx'
+wb = xw.Book(workbook_path)
+ws = wb.sheets['sheet1']
+ws.range('E35').value = list_of_values # this can be a list or dataframe - just pick the top left cell to paste
+wb.save() # if the file already exists, i hit a pop-up prompt here to manually overwrite.
+wb.close()
 
 ```
 
+see here for an alternative method (which also throws an error for me - strange): https://stackoverflow.com/questions/9920935/easily-write-formatted-excel-from-python-start-with-excel-formatted-use-it-in
 
 __3) Creating a PivotTable in Excel__ 
 
