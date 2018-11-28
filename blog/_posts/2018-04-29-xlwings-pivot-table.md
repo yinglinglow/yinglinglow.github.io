@@ -62,11 +62,11 @@ see the docs for more info: https://docs.xlwings.org/en/stable/datastructures.ht
 import xlwings as xw
 
 list_of_values = [1, 2, 3] # this pastes as a row. to paste as a column, use [[1], [2], [3]]
-workbook_path = 'abc.xlsx'
+workbook_path = 'C:/abc.xlsx' # make sure it's the FULL path, otherwise you will hit a pop-up prompt (manual input required) while overwriting existing files when saving
 wb = xw.Book(workbook_path)
 ws = wb.sheets['sheet1']
 ws.range('E35').value = list_of_values # this can be a list or dataframe - just pick the top left cell to paste
-wb.save() # if the file already exists, i hit a pop-up prompt here to manually overwrite.
+wb.save() 
 wb.close()
 
 ```
