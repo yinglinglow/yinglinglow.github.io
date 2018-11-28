@@ -17,7 +17,7 @@ python -m ipykernel install --user --name=my-virtualenv-name
 
 jupyter lab
 
-# in the notebook, select Change Kernal and pick my-virtualenv-name
+# in the notebook, select Change Kernel and pick my-virtualenv-name
 
 ```
 
