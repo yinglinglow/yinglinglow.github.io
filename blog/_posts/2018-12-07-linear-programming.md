@@ -65,3 +65,40 @@ res = minimize(rosen, x0, method='trust-constr', jac=rosen_der, hess=rosen_hess,
 print(res.x)
 
 ```
+
+---
+
+oh my - for beginners, check THIS out instead for scipy optimise if you need to solve for vectors: https://www.youtube.com/watch?v=cXHvC_FGx24
+
+helped me immensely in my very beginner try to code some optimisation down below:
+
+```python
+
+import numpy as np
+from scipy.optimize import minimize
+
+def obj(x):
+    """The objective function"""
+    return (x[0]*100 + x[1]*0) + (x[2]*60 + x[3]*90)
+
+def constraint1(x):
+    return x[0]*100 + x[1]*0 - 100
+
+def constraint2(x):
+    return x[2]*60 + x[3]*90 - 150
+
+
+b = (0, 1)
+bnds = (b, b, b, b)
+con1 = {'type':'eq', 'fun': constraint1}
+con2 = {'type':'eq', 'fun': constraint2}
+cons = [con1, con2]
+
+x0 = np.array([0, 0, 0, 0]) #initial weights
+
+sol = minimize(obj, x0, method='SLSQP', 
+               bounds=bnds, constraints=cons)
+
+print(sol.x)
+
+```
