@@ -74,31 +74,30 @@ helped me immensely in my very beginner try to code some optimisation down below
 
 ```python
 
-import numpy as np
-from scipy.optimize import minimize
+from pulp import LpVariable, LpProblem, LpMinimize, value
 
-def obj(x):
-    """The objective function"""
-    return (x[0]*100 + x[1]*0) + (x[2]*60 + x[3]*90)
+exp1sec = LpVariable("exp1sec", 0, 1000)
+exp1unsec = LpVariable("exp1unsec", 0, 1000)
+exp2sec = LpVariable("exp2sec", 0, 1000)
+exp2unsec = LpVariable("exp2unsec", 0, 1000)
 
-def constraint1(x):
-    return x[0]*100 + x[1]*0 - 100
+# create problem
+prob = LpProblem("myProblem", LpMinimize)
+# add constraint
+prob += exp1sec + exp1unsec == 160 # exp1 must add up
+prob += exp2sec + exp2unsec == 90 # exp2 must add up
+prob += exp1sec + exp2sec == 150 # sec must add up
+prob += exp1unsec + exp2unsec == 100 # unsec must add up
 
-def constraint2(x):
-    return x[2]*60 + x[3]*90 - 150
+# define objective
+sec_weight = 0.1
+unsec_weight = 1
+prob += (sec_weight*exp1sec + unsec_weight*exp1unsec) + (sec_weight*exp2sec + unsec_weight*exp2unsec)
+# solve
+status = prob.solve()
 
-
-b = (0, 1)
-bnds = (b, b, b, b)
-con1 = {'type':'eq', 'fun': constraint1}
-con2 = {'type':'eq', 'fun': constraint2}
-cons = [con1, con2]
-
-x0 = np.array([0, 0, 0, 0]) #initial weights
-
-sol = minimize(obj, x0, method='SLSQP', 
-               bounds=bnds, constraints=cons)
-
-print(sol.x)
+# print results
+print(f"""exp1sec = {value(exp1sec)}, exp1unsec = {value(exp1unsec)}, 
+      exp2sec = {value(exp2sec)}, exp2unsec = {value(exp2unsec)}""")
 
 ```
