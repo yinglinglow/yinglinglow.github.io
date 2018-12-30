@@ -101,3 +101,38 @@ print(f"""exp1sec = {value(exp1sec)}, exp1unsec = {value(exp1unsec)},
       exp2sec = {value(exp2sec)}, exp2unsec = {value(exp2unsec)}""")
 
 ```
+
+---
+
+if you have a variable number of variables (oh my) you can use vectors instead.
+In the example below, I have 4 variables to solve (the length of the array x is 4).
+
+```python
+import numpy as np
+from scipy.optimize import minimize
+
+def obj(x):
+    """The objective function"""
+    weight_for_sec = np.array([0.1, 0.1, 0.1, 0.1])
+    weight_for_unsec = np.array([1, 1, 1, 1])
+    exposure_sec = x
+    exposure_unsec = np.array([160, 90, 150, 100]) - exposure_sec
+    return np.sum(weight_for_sec * exposure_sec + weight_for_unsec * exposure_unsec)
+
+def sec_total_contraint(x):
+    """Sec must all add up"""
+    return np.sum(x) - 300
+
+con1 = {'type':'eq', 'fun': sec_total_contraint}
+cons = [con1]
+
+bnds = ((0, 160), (0, 90), (0, 150), (0, 100))
+
+x0 = np.array([1, 1, 1, 1]) #initial guess
+
+sol = minimize(obj, x0, method='SLSQP', 
+               bounds=bnds, constraints=cons)
+
+print(sol.x)
+
+```
