@@ -136,3 +136,11 @@ sol = minimize(obj, x0, method='SLSQP',
 print(sol.x)
 
 ```
+
+---
+
+one more level up - if you want x to be a matrix, check out my repo hoho: https://github.com/yinglinglow/proj_linearprog
+
+bonus - there is an excel sheet in the repo that helped me tremendously to figure things out. check it out!
+
+also in other news: happy 2019!!
