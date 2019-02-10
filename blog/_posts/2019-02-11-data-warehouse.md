@@ -51,3 +51,12 @@ Tableau and Redshift: https://www.tableau.com/solutions/workbook/exploring-big-d
 Tableau and Cloudera: https://onlinehelp.tableau.com/current/pro/desktop/en-us/examples_hadoop.htm
 
 Tableau and Snowflake: https://www.tableau.com/solutions/snowflake
+
+---
+
+so actually... slide 4 of this deck could have solved all my problems: https://www.slideshare.net/RTTS/what-is-a-data-warehouse-and-how-do-i-test-it
+
+
+and omg THIS!!!!
+
+https://medium.com/python-pandemonium/develop-your-first-etl-job-in-python-using-bonobo-eaea63cc2d3c
