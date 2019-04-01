@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Parse PDFs using Tabula"
+title: "Working with Chinese in Pandas"
 date: 2019-03-28
 ---
 
