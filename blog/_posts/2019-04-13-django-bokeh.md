@@ -12,7 +12,7 @@ for me anyways. lol
 
 now i can go about the day feeling happy. whee~
 
-<img src="https://user-images.githubusercontent.com/21985915/56074038-662f2780-5dde-11e9-817e-f7f2ebe18b77.png" width='500'>
+<img src="https://user-images.githubusercontent.com/21985915/56074038-662f2780-5dde-11e9-817e-f7f2ebe18b77.png" width='800'>
 
 
 of course couldn't have done it without tutorial so - this is pretty amazing: https://hackernoon.com/integrating-bokeh-visualisations-into-django-projects-a1c01a16b67a
