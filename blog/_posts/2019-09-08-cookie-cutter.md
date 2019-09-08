@@ -20,7 +20,7 @@ just use pip install:
 
 ```python
 
-pip install git+https://github.com/cookiecutter/cookiecutter
+pip install git+https://github.com/mypackagename
 
 ```
 
