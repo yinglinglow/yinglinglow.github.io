@@ -4,8 +4,6 @@ title: "Exploring Data"
 date: 2020-01-26
 ---
 
-# 2 - Exploring the Data
-
 What are we looking out for when we are exploring our data?
 
 First and foremost, we need our data to be complete and accurate. <br>

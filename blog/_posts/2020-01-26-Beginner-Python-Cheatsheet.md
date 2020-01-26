@@ -24,7 +24,7 @@ Enjoy!
 
 ---
 
-<a href="https://www.yinglinglow.com/blog/2020/01/26/Getting-Data-In">__1 - Getting Data In__]</a>
+<a href="https://www.yinglinglow.com/blog/2020/01/26/Getting-Data-In">__1 - Getting Data In__</a>
 - Importing data from a file (CSV, Excel or JSON)
 - Connecting to servers such as MSSQL
 - Importing/scraping finance data, tables or text from the web (datareader/BeautifulSoup)

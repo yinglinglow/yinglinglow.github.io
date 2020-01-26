@@ -4,8 +4,6 @@ title: "Command Line"
 date: 2020-01-26
 ---
 
-# 9 - Command line
-
 __Table of Contents__
  - [Navigating](#navigate)
  - [Modifying](#modify)

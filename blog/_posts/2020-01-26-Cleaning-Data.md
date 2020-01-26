@@ -4,8 +4,6 @@ title: "Cleaning Data"
 date: 2020-01-26
 ---
 
-# 3 - Cleaning the Data
-
 __Table of Contents__
  * Data cleaning
     - [Handling null values](#null)

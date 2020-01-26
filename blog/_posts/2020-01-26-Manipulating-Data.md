@@ -4,8 +4,6 @@ title: "Manipulating Data"
 date: 2020-01-26
 ---
 
-# 4 - Manipulating the Data
-
 __Table of Contents__
  * Data structure
     - [Changing data structure](#structure)

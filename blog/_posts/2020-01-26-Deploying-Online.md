@@ -4,7 +4,7 @@ title: "Deploying Online"
 date: 2020-01-26
 ---
 
-# Setting up your Git (in Python)
+### __Setting up your Git (in Python)__
 A step-by-step guide to setting up Git repositories, and deploying to Heroku, using Python and Visual Studio Code! It was really painful for me the first few times I did it (with the help of my expert friend, no less), so I really hope the below will help you guys simplify it.
 
 For clarification on the below instructions, when I say “Input `xyzzy`“ I mean type `xyz` into the terminal and hit return/enter. 
@@ -37,7 +37,7 @@ At this stage you have successfully set up your Github repository! You can now w
 Next, we will host your work on the internet (via Heroku) so everyone can see it!
 
 
-# Setting up heroku (in Python)
+### __Setting up heroku (in Python)__
 
 1. Signup for a free account/login
 2. Click 'Create' on top right hand corner, and then 'Create new app'

@@ -4,8 +4,6 @@ title: "Getting Data In"
 date: 2020-01-26
 ---
 
-# 1 - Getting data in
-
 __Table of Contents__
  * Import data from a file 
     - [CSV](#csv)

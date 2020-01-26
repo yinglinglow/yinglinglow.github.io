@@ -4,8 +4,6 @@ title: "General Tips and Tricks"
 date: 2020-01-26
 ---
 
-# 10 - General tips & tricks
-
 Random formats for reference, useful or interesting tips that I find helpful/speeds things up!
 
 Basic commands:
