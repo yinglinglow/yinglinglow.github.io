@@ -17,3 +17,9 @@ https://www.benfrederickson.com/python-as-a-declarative-programming-language/
 so: declarative, avoid for-loops
 
 yes, or no? :O
+
+---
+
+https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf
+
+flat is better than nested
