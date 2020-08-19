@@ -55,3 +55,15 @@ Enjoy!
 
 <a href="https://www.yinglinglow.com/blog/2020/01/26/General-Tips">__10 - General tips & tricks__</a>
 - Random formats for reference, or useful or interesting tips that I find helpful/speeds things up!
+
+---
+
+__Edit: 19 August 2020__
+
+So the folks at Toptal (a company that helps to connect companies with talent) have come up with an hiring guide for python here: https://www.toptal.com/python#hiring-guide
+
+I think it provides some helpful tips and interesting perspectives on how different people view/use python so it is worth a read (for any python user, be it hiring managers or applicants)!
+
+just keep in mind that people are entitled to their own opinions and you don't necessarily have to agree with theirs! (like, i think pytest has a pretty big following too, compared to unittest for unit testing?)
+
+also... if i were you i'd be cautious about hiring a (purely) python web developer haha (hi javascript!)
