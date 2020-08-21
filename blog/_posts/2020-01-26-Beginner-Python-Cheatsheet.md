@@ -60,7 +60,7 @@ Enjoy!
 
 __Edit: 19 August 2020__
 
-So the folks at Toptal (a company that helps to connect companies with talent) have come up with an hiring guide for python here: https://www.toptal.com/python#hiring-guide
+So the folks at Toptal (a company that helps to connect companies with talent) have come up with an hiring guide for python here: <a href="https://www.toptal.com/python#hiring-guide">https://www.toptal.com/python#hiring-guide</a>
 
 I think it provides some helpful tips and interesting perspectives on how different people view/use python so it is worth a read (for any python user, be it hiring managers or applicants)!
 
